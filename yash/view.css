@@ -1,0 +1,122 @@
+body{
+	  background-color: royalblue;
+	  margin: -10px;
+
+}
+#header{
+       height: 80px;
+       width: 100%;
+       background-color:lightblue;
+   }
+#mini-header{
+       height: 40px;
+       width: 100%;
+       background-color:lightblue;
+}   
+#slider{
+	    height: 250px;
+	    width: 100%;
+	    background-color:lightblue;
+}
+#content{
+	    height: auto;
+	    min-height: 600px;
+	    width: 100%;
+	    background-color:lightblue;
+}
+#footer{
+	    height: 180px;
+	    width: 100%;
+	    background-color:lightblue;
+
+}
+#inside-header{
+       height: 80px;
+       width: 910px;
+       margin :0px auto;
+       padding-top: 28px;
+
+       background-color: yellow;
+   }
+#inside-mini-header{
+       height: 40px;
+       width: 910px; 
+       margin: 0px auto;
+       background-color: yellow;
+}   
+#inside-slider{
+	    height: 250px;
+	    width: 910px;
+	    margin: 0px auto;	    
+	    background-color:  yellow;
+}
+#inside-content{
+	    height: auto;
+	    min-height: 600px;
+	    width: 910px;
+	    margin: 0px auto;
+	    padding: 10px 0px;
+	    background-color:  yellow;
+}
+#inside-footer{
+	    height: 180px;
+	    width: 910px;
+	    margin:0px auto;
+	    
+	    background-color: yellow;
+
+}
+.box{
+	  height: 50px;
+	  width: 50px;
+	  background-color: white;
+	  float: right;
+	  margin: 0px 10px;
+
+}
+#content-box1{
+	   height: auto;
+	   min-height: 600px;
+	   width:300px;
+	   margin-left: 10px;
+	   float: left;
+
+	   background-color: white;
+}
+#content-box1:hover{
+	box-shadow: 30px 30px 30px black;
+
+}
+#content-box2{
+	  height: auto;
+	  min-height: 600px;
+	  width: 590px;
+	
+	  background-color: black;
+	   
+	  float: left;
+}
+#content-box2:hover{
+	box-shadow: 30px 0px 30px grey;
+}
+.content-mini-box{
+	height: 150px;
+	width: 150px;
+	float: right;
+	background-color: white;
+	margin: 10px; 
+	border-radius: 10px;
+
+}
+.content-mini-box:hover{
+	box-shadow: 20px 10px 20px pink;
+}
+.footer-box{
+	height: 130px;
+	width: 282px;
+	float: left;
+	margin-left: 10px;
+	padding-top: 10px;
+
+	background-color: orange;
+}
