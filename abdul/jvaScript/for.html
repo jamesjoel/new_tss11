@@ -4,13 +4,14 @@
 	<title>For Loop</title>
 </head>
 <body>
+	<h1 id="ab"></h1>
 <script type="text/javascript">
-	
-	for(i=1;i<5;i++){
+	for(i=1;i<=5;i++){
 		console.log("this is for loop increment :"+i);
+		document.getElementById('ab').innerHTML="Hello "+i;
 	}
 
-	for(j=10;j>0;j--){
+	for(j=5;j>0;j--){
 		console.log("this is for loop decrement :"+j);
 	}
 
