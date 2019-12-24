@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
+  x = true;
+  a = 10;
+  b = "rohit";
+
+  z = 'd';
   constructor() { }
 
   ngOnInit() {
