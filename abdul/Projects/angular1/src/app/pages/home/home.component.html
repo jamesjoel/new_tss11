@@ -1,0 +1,32 @@
+<div class="row my-2">
+<div class="col-md-3">
+  <h5 class="text-info text-center">Categories</h5>
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="list-group">
+        <li class="list-group-item"><a routerLink="" class="list-group-item-action"> Men's</a></li>
+        <li class="list-group-item"><a routerLink="" class="list-group-item-action"> Women's</a></li>
+        <li class="list-group-item"><a routerLink="" class="list-group-item-action"> Kids</a></li>
+        <li class="list-group-item"><a routerLink="" class="list-group-item-action"> Electronics</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="col-md-9">
+  <h5 class="text-info text-center">Products list</h5>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let items of jsonData">
+      <div class="card mb-2">
+        <div class="card-header">
+          <h1>{{items.name}}</h1>
+        </div>
+        <div class="card-body">
+          <h5 class="text-success">{{items.category}}</h5>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi est possimus totam quos. Dolor maiores consequuntur sunt, quam, asperiores quis, impedit sit accusantium quaerat mollitia soluta hic voluptatem culpa. Aspernatur.
+        </div>
+        <div class="card-footer"><span class="text-danger mr-2">{{items.price}}</span><a routerLink="" class="btn btn-success float-right">Buy</a></div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
