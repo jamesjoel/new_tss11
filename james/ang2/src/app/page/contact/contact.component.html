@@ -1,0 +1,28 @@
+<h2>This is Contact Page</h2>
+<span *ngIf="x; then condition1 else condition2"></span>
+<ng-template #condition1>
+    <h2 class="bg-success">Welcome, this is TRUE condition</h2>
+</ng-template>
+<ng-template #condition2>
+    <h2 class="bg-danger">Hello, this is FALSE condition</h2>
+</ng-template>
+
+
+<hr />
+<ng-template [ngIf]="x" [ngIfElse]="cond">
+    <h1>TRUE</h1>
+</ng-template>
+
+<ng-template #cond>
+    <h1>FALSE</h1>
+</ng-template>
+<Hr />
+<div [ngSwitch]="z">
+    <h1 *ngSwitchCase="'a'">Red</h1>
+    <h1 *ngSwitchCase="'b'">Green</h1>
+    <h1 *ngSwitchCase="'c'">Blue</h1>
+    <h1 *ngSwitchCase="'d'">Yello</h1>
+    <h1 *ngSwitchDefault>No Color Found</h1>
+</div>
+
+

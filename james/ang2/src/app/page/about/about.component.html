@@ -1,0 +1,44 @@
+<h2>This is About Page</h2>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti dolore at maiores illo amet excepturi dolores. Ipsa, adipisci est nihil esse non alias velit iusto quia hic animi assumenda nemo.</p>
+<h4>{{ a }}</h4>
+
+<h2 *ngFor="let x of arr">
+    {{ x }}
+</h2>
+
+<ul>
+    <li *ngFor="let x of cities">
+        {{ x }}
+    </li>
+</ul>
+<table class="table table-dark table-bordered table-stiped table-hover">
+    <tr>
+        <th>S.No.</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Fee</th>
+    </tr>
+    <tr *ngFor="let x of data; let n = index">
+        <td>{{ n+1 }}</td>
+        <td>{{ x.name }}</td>
+        <td>{{ x.age }}</td>
+        <td>{{ x.fee }}</td>
+    </tr>
+
+
+</table>
+<div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let x of product">
+        <div class="card">
+            <div class="card-header">{{ x.name }}</div>
+            <div class="card-body">
+                <p>Price : <b>{{ x.price }}</b></p>
+                <p>Category : <b>{{ x.category }}</b></p>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-sm btn-primary">Buy</button>
+            </div>
+        </div>
+    </div>
+</div>
+

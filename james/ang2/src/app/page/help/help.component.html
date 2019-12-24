@@ -1,0 +1,23 @@
+<h2>this is help page</h2>
+<button class="btn btn-primary" (click)="show()">OK</button>
+
+<p *ngIf="check" class="myclass">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi modi voluptatibus mollitia illo voluptatem, autem impedit reprehenderit deserunt assumenda labore suscipit, quaerat natus rerum quis beatae corporis amet sint voluptates.</p>
+<Br />
+<Hr />
+<button class="btn btn-success m-1" (click)="demo(1)">First</button>
+<button class="btn btn-success m-1" (click)="demo(2)">Second</button>
+<button class="btn btn-success m-1" (click)="demo(3)">Third</button>
+<div [ngSwitch]="a">
+    <div *ngSwitchCase="1">
+        <h2>First Para</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, a quisquam! Porro inventore, praesentium recusandae error quo vel velit deleniti, at sed magnam enim, aliquid tempora aperiam deserunt odio eligendi.</p>
+    </div>
+    <div *ngSwitchCase="2">
+        <h2>Second Para</h2>
+        <p>sdfg sdfg sdfgsdg</p>
+    </div>
+    <div *ngSwitchCase="3">
+        <h2>Third Para</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit quisquam adipisci quam. Fugit et ad, maiores error debitis alias eos ex recusandae, ratione dolor sapiente reprehenderit quia. Esse, ad fugiat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, animi quae! Harum sapiente voluptas quae. Quas labore vel non! Aliquam eaque quas, tenetur earum quisquam praesentium saepe accusamus! Natus, molestias?</p>
+    </div>
+</div>
