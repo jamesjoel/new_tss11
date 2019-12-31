@@ -12,6 +12,7 @@ import { HomeComponent } from './page/home/home.component';
 import { HelpComponent } from './page/help/help.component';
 import { TermsComponent } from './page/terms/terms.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import { TermsComponent } from './page/terms/terms.component';
     HomeComponent,
     HelpComponent,
     TermsComponent
+    
   ],
   imports: [
     BrowserModule,
