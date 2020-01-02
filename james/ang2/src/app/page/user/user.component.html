@@ -1,0 +1,13 @@
+<div>
+    <h2>Parent Component(USER)</h2>
+    <input type="Text" [(ngModel)]="temp"/>
+    <button class="btn btn-dark" (click)="afterClick()">GO</button>
+
+    <hr />
+    <app-kids
+        [cName]="name"
+        [cCity]="city"
+        [cGo]="go"
+    ></app-kids>
+
+</div>

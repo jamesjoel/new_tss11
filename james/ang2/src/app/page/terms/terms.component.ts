@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Student } from '../../models/student.interface';
+
 
 @Component({
   selector: 'app-terms',
@@ -7,31 +9,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TermsComponent implements OnInit {
 
-  name = "rohit";
-  data = [
+  
+
+  name:String = "rohit";
+  data : Student[] = [
     {
+      id : 1,
       name : "rohit",
       age : 25,
-      city : "indore"
+      city : "Indore"
     },
     {
+      id : 2,
       name: "jaya",
       age: 20,
-      city: "bhopal"
+      city: "Bhopal"
     },
     {
+      id : 3,
       name: "gaurav",
       age: 22,
-      city: "ujjain"
+      city: "Ujjain"
     }
   ];
 
-  newStudent={
+  newStudent : Student={
     name : "",
     age : null,
     city: ""
   }
 
+  // singleStudent:Student={
+  //   name :"",
+  //   age : null,
+  //   city : ""
+  // };
+  singleStudent:Student;
 
 
 
@@ -45,12 +58,45 @@ export class TermsComponent implements OnInit {
   }
   add(){
     // console.log(this.newStudent);
-    this.data.push(this.newStudent);
-    this.newStudent={
-      name : "",
-      age : null,
-      city : ""
+    if(this.newStudent.id) {
+      for(let i =0; i<this.data.length; i++)
+      {
+        if(this.data[i].id == this.newStudent.id)
+        {
+          this.data[i]=this.newStudent;
+          break;
+        }
+      }
     }
+    else{
+
+      this.data.push(this.newStudent);
+    }
+    
+  }
+  emptyStudent() {
+
+    console.log(this.newStudent);
+
+    this.newStudent = {
+      name: "",
+      age: null,
+      city: ""
+    }
+  }
+  askDelete(stu:Student) {
+    this.singleStudent=stu;
+  }
+  delete() {
+    let n = this.data.indexOf(this.singleStudent);
+    this.data.splice(n, 1);
+  }
+  askEdit(stu:Student) {
+    console.log("------", stu);
+    // this.newStudent=stu;
+    // this.newStudent = Object.assign({}, stu);
+
+    this.newStudent = {... stu};
   }
 
 }
