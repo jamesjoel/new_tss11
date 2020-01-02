@@ -1,5 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
+
+
+
+
+import { UserComponent } from './page/user/user.component';
 import { AboutComponent } from './page/about/about.component';
 import { ContactComponent } from './page/contact/contact.component';
 import { HomeComponent } from './page/home/home.component';
@@ -15,6 +21,10 @@ const routes: Routes = [
   {
     path : "help",
     component : HelpComponent
+  },
+  {
+    path : "user",
+    component : UserComponent
   },
   {
     path : "about",

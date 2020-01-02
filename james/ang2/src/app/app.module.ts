@@ -11,6 +11,8 @@ import { ContactComponent } from './page/contact/contact.component';
 import { HomeComponent } from './page/home/home.component';
 import { HelpComponent } from './page/help/help.component';
 import { TermsComponent } from './page/terms/terms.component';
+import { UserComponent } from './page/user/user.component';
+import { KidsComponent } from './shared/kids/kids.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { TermsComponent } from './page/terms/terms.component';
     ContactComponent,
     HomeComponent,
     HelpComponent,
-    TermsComponent
+    TermsComponent,
+    UserComponent,
+    KidsComponent
     
   ],
   imports: [
