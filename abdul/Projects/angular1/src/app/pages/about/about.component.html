@@ -1,0 +1,19 @@
+<div class="row my-4">
+  <div class="col-md-12">
+    <h1 class="text-danger">Here we will learn about ngFor loop and more..</h1>
+    <h3 class="text-success">{{ a }}</h3>
+    <h3 class="text-warning">{{ array1[0]}}</h3>
+    <h3 class="text-warning">{{ array1[1]}}</h3>
+    <h3 class="text-warning">{{ array1[2]}}</h3><hr>
+    <h1>Below Using *ngFor loop</h1>
+    <h3 class="text-danger" *ngFor="let array of array2; index as i">
+      {{ i+1 }} {{ array }}
+    </h3><hr>
+    <h1>Below Using ngFor loop with - ul / ol</h1>
+    <ul class="bg-info">
+      <li class="text-light" *ngFor="let data of array2; index as i">{{i+1}} {{data}}</li>
+    </ul><hr>
+    <h1>Below Using *ngIf</h1>
+    <h3 *ngIf="b">This text will be view when var b is true</h3>
+  </div>
+</div>
