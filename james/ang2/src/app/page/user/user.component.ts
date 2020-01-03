@@ -13,12 +13,18 @@ export class UserComponent implements OnInit {
   temp:string="";
   go:string="";
 
+  pName:string;
+
   constructor() { }
 
   ngOnInit() {
   }
   afterClick() {
     this.go=this.temp;
+  }
+  recParent(a){
+    console.log("--------", a);
+    this.pName=a;
   }
 
 }
