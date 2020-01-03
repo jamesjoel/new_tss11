@@ -1,1 +1,79 @@
-<p>contact works!</p>
+<div class="row my-4">
+  <div class="col-md-12">
+    <button data-toggle="modal" data-target="#myModal" (click)="add()" class="btn btn-success mb-2">Add Users</button>
+    <button class="btn btn-warning ml-4 mb-2" (click)="redirect()">Go Parent</button>
+
+    <table class="table table-bordered table-striped table-dark">
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        
+      </tr>
+      <tr *ngFor="let x of Data">
+        <td>{{x.name}}</td>
+        <td>{{x.age}}</td>
+        <td>{{x.city}}</td>
+        <td><button data-toggle="modal" data-target="#myModal" (click)="editUser(x)" class="btn btn-primary">Edit</button></td>
+        <td><button data-toggle="modal" data-target="#deleteModal" (click)="deleteThis(x)" class="btn btn-danger">Delete</button></td>
+      </tr>
+    </table>
+
+    <div id="myModal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>{{ collectData.id ? "Update" : "Add" }} Student</h3>
+            <a  data-dismiss="modal">X</a>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" name="name" class="form-control" [(ngModel)]="collectData.name" placeholder="Enter your Name">
+            </div>
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input type="text" name="age" class="form-control" [(ngModel)]="collectData.age" placeholder="Enter your Age">
+            </div>
+            <!-- <h1></h1> -->
+            <div class="form-group">
+              <label for="city">City</label>
+              <select name="city" class="form-control" [(ngModel)] = "collectData.city">
+                <option value="">Select</option>
+                <option value="Indore">Indore</option>
+                <option value="Bhopal">Bhopal</option>
+                <option value="Katni">Katni</option>
+                <option value="Jabalpur">Jabalpur</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-info" (click)="addUser()" data-dismiss="modal">{{ collectData.id ? "Update" : "Add" }}</button>
+            <button class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="deleteModal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            Delete Student
+            <a  data-dismiss="modal">X</a>
+          </div>
+          <div class="modal-body">
+            <h3>Are you sure, want to delete <b *ngIf="singleStudent">{{singleStudent.name}}</b></h3>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-danger" (click)="deleteUser()" data-dismiss="modal">Delete</button>
+            <button class="btn btn-warning" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
