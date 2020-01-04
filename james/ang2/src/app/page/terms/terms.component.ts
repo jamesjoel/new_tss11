@@ -59,7 +59,14 @@ export class TermsComponent implements OnInit {
   add(){
     // console.log(this.newStudent);
     if(this.newStudent.id) {
-
+      for(let i =0; i<this.data.length; i++)
+      {
+        if(this.data[i].id == this.newStudent.id)
+        {
+          this.data[i]=this.newStudent;
+          break;
+        }
+      }
     }
     else{
 
