@@ -10,7 +10,7 @@ export class StudentService {
   allStudent:Student[];
   constructor() { }
 
-  allStudent() {
+  getStudent() {
     this.allStudent=[
       {
         name : "rohit",
