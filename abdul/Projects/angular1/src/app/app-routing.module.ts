@@ -5,6 +5,9 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { MainComponent } from './parent-child/main/main.component';
+import { Child1Component } from './parent-child/child1/child1.component';
 
 
 const routes: Routes = [
@@ -26,8 +29,19 @@ const routes: Routes = [
   },
   {
     path : "signup",
-    component :
-    SignupComponent
+    component : SignupComponent
+  },
+  {
+    path : "main",
+    component : MainComponent
+  },
+  {
+    path : "child",
+    component : Child1Component
+  },
+  {
+    path : "**",
+    component : PageNotFoundComponent
   }
 ];
 
