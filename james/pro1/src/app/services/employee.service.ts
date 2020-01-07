@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { Employee } from '../models/employee.interface';
 
 
 @Injectable({
@@ -20,8 +20,8 @@ export class EmployeeService {
   deleteEmployee() {
 
   }
-  addEmployee() {
-
+  addEmployee(obj:Employee) {
+    return this._http.post<any>("http://localhost:3000/employees", obj);
   }
 
 

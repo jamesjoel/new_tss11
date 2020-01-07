@@ -20,5 +20,10 @@ export class EmployeeComponent implements OnInit {
       this.employees = result;
     });
   }
-
+  save(obj:Employee) {
+    this._emp.addEmployee(obj).subscribe(result=>{
+      // console.log(result);
+      this.employees.push(result);
+    });
+  }
 }
