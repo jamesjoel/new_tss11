@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Employee } from '../../models/employee.interface';
 import { Output, EventEmitter } from '@angular/core';
 
@@ -10,13 +10,7 @@ import { Output, EventEmitter } from '@angular/core';
 export class AddEmpComponent implements OnInit {
 
   @Output() sendToParent = new EventEmitter();  
-  employee:Employee={
-    first_name : "",
-    last_name : "",
-    email : ""
-
-
-  };
+  @Input() employee:Employee;
   constructor() { }
 
   ngOnInit() {

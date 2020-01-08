@@ -1,6 +1,6 @@
 <div class="container">
     <h2 class="text-center">Employees</h2>
-    <button class="btn btn-info" data-toggle="modal" data-target="#addEmp">Add</button>
+    <button class="btn btn-info" data-toggle="modal" data-target="#addEmp" (click)="askAdd()">Add</button>
     <br />
     <br />
     <table class="table table-dark table-bordered table-hover table-striped">
@@ -9,6 +9,9 @@
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
+            <th>More</th>
+            <td>Edit</td>
+            <td>Delete</td>
             <!-- <th>Image</th> -->
         </tr>
         <tr *ngFor="let employee of employees; index as n">
@@ -16,8 +19,12 @@
             <td>{{ employee.first_name }}</td>
             <td>{{ employee.last_name }}</td>
             <td>{{ employee.email }}</td>
+            <td><button class="btn btn-warning">More</button></td>
+            <td><button class="btn btn-info" (click)="askEdit(employee)" data-toggle="modal" data-target="#addEmp" >Edit</button></td>
+            <td><button class="btn btn-danger" (click)="askDelete(employee)" data-target="#deleteEmp" data-toggle="modal">Delete</button></td>
             <!-- <td><img src="{{ employee.image }}" height="50" width="50" /></td> -->
         </tr>
     </table>
 </div>
-<app-add-emp (sendToParent)="save($event)"></app-add-emp>
+<app-add-emp (sendToParent)="save($event)" [employee]="selectedEmployee"></app-add-emp>
+<app-delete-emp [employee]="selectedEmployee" (deleteEmployee)="delete()"></app-delete-emp>

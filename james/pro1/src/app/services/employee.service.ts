@@ -14,14 +14,21 @@ export class EmployeeService {
     return this._http.get<any>("http://localhost:3000/employees")
 
   }
-  updateEmployee() {
-
+  updateEmployee(obj:Employee) {
+    return this._http.put<any>("http://localhost:3000/employees/"+obj.id, obj);
   }
-  deleteEmployee() {
-
+  deleteEmployee(obj:Employee) {
+    return this._http.delete<any>("http://localhost:3000/employees/"+obj.id);
   }
   addEmployee(obj:Employee) {
     return this._http.post<any>("http://localhost:3000/employees", obj);
+  }
+  emptyEmployee() {
+    return { 
+      first_name : "",
+      last_name : "",
+      email : ""
+    }
   }
 
 

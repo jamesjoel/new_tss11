@@ -11,6 +11,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HelloDirective } from './directives/hello.directive';
 import { EmployeeComponent } from './pages/employee/employee.component';
 import { AddEmpComponent } from './shared/add-emp/add-emp.component';
+import { DeleteEmpComponent } from './shared/delete-emp/delete-emp.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AddEmpComponent } from './shared/add-emp/add-emp.component';
     NotFoundComponent,
     HelloDirective,
     EmployeeComponent,
-    AddEmpComponent
+    AddEmpComponent,
+    DeleteEmpComponent
   ],
   imports: [
     BrowserModule,
