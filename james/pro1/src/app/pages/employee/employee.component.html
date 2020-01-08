@@ -1,5 +1,7 @@
 <div class="container">
     <h2 class="text-center">Employees</h2>
+    <button class="btn btn-info" data-toggle="modal" data-target="#addEmp">Add</button>
+    <br />
     <br />
     <table class="table table-dark table-bordered table-hover table-striped">
         <tr>
@@ -7,12 +9,15 @@
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
+            <!-- <th>Image</th> -->
         </tr>
         <tr *ngFor="let employee of employees; index as n">
             <td>{{ n+1 }}</td>
             <td>{{ employee.first_name }}</td>
             <td>{{ employee.last_name }}</td>
             <td>{{ employee.email }}</td>
+            <!-- <td><img src="{{ employee.image }}" height="50" width="50" /></td> -->
         </tr>
     </table>
 </div>
+<app-add-emp (sendToParent)="save($event)"></app-add-emp>
