@@ -12,6 +12,7 @@ import { HelloDirective } from './directives/hello.directive';
 import { EmployeeComponent } from './pages/employee/employee.component';
 import { AddEmpComponent } from './shared/add-emp/add-emp.component';
 import { DeleteEmpComponent } from './shared/delete-emp/delete-emp.component';
+import { DemoDirective } from './directives/demo.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DeleteEmpComponent } from './shared/delete-emp/delete-emp.component';
     HelloDirective,
     EmployeeComponent,
     AddEmpComponent,
-    DeleteEmpComponent
+    DeleteEmpComponent,
+    DemoDirective
   ],
   imports: [
     BrowserModule,

@@ -8,22 +8,10 @@
       "image": "./assets/images/1.png"
     },
     {
-      "first_name": "Rohit",
-      "last_name": "verma",
-      "email": "rohit@gmail.com",
-      "id": 6
-    },
-    {
       "first_name": "James",
       "last_name": "joel",
       "email": "james@gmail.com",
       "id": 7
-    },
-    {
-      "first_name": "Nidhi11",
-      "last_name": "Joshi",
-      "email": "nidhi@gmail.com",
-      "id": 8
     },
     {
       "first_name": "Ritesh",
@@ -32,10 +20,22 @@
       "id": 9
     },
     {
-      "first_name": "Gaurav",
+      "first_name": "Gaurav sdf sdfg",
       "last_name": "Verma",
       "email": "gaurav@gmail.com",
       "id": 10
+    },
+    {
+      "first_name": "Demo111",
+      "last_name": "Demo",
+      "email": "demo@gmail.com",
+      "id": 11
+    },
+    {
+      "first_name": "  dsfg Jaya",
+      "last_name": "verma",
+      "email": "jaya@gmail.com",
+      "id": 12
     }
   ]
 }

@@ -20,7 +20,7 @@
             <td>{{ employee.last_name }}</td>
             <td>{{ employee.email }}</td>
             <td><button class="btn btn-warning">More</button></td>
-            <td><button class="btn btn-info" (click)="askEdit(employee)" data-toggle="modal" data-target="#addEmp" >Edit</button></td>
+            <td><button class="btn btn-info" (click)="askEdit(employee, n)" data-toggle="modal" data-target="#addEmp" >Edit</button></td>
             <td><button class="btn btn-danger" (click)="askDelete(employee)" data-target="#deleteEmp" data-toggle="modal">Delete</button></td>
             <!-- <td><img src="{{ employee.image }}" height="50" width="50" /></td> -->
         </tr>

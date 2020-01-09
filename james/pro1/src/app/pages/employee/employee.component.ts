@@ -11,6 +11,7 @@ import { EmployeeService } from '../../services/employee.service';
 export class EmployeeComponent implements OnInit {
 
   employees:Employee[];
+  index:number;
   selectedEmployee:Employee={
     first_name : "",
     last_name : "",
@@ -30,10 +31,14 @@ export class EmployeeComponent implements OnInit {
   save(obj:Employee) {
       if(obj.id) {
         this._emp.updateEmployee(obj).subscribe(result=>{
-          for(let i=0; i<this.employees.length; i++) {
-            if(this.employees[i].id==obj.id)
-              this.employees[i] = obj;
-          }
+          
+          this.employees[this.index]=obj;
+          // for(let i=0; i<this.employees.length; i++) {
+          //   if(this.employees[i].id==obj.id){
+          //       this.employees[i] = obj;
+          //       break;
+          //   }
+          // }
         });
       }
       else {
@@ -56,7 +61,8 @@ export class EmployeeComponent implements OnInit {
       
     });
   }
-  askEdit(obj:Employee) {
+  askEdit(obj:Employee, n:number) {
     this.selectedEmployee = {... obj};
+    this.index=n;
   }
 }

@@ -10,6 +10,7 @@ export class HelloDirective {
     _el.nativeElement.style.backgroundColor="red";
     _el.nativeElement.style.fontSize="20px";
     _el.nativeElement.innerHTML="INDORE ";
+    
   }
 
 }
