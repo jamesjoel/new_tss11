@@ -13,6 +13,8 @@ import { EmployeeComponent } from './pages/employee/employee.component';
 import { AddEmpComponent } from './shared/add-emp/add-emp.component';
 import { DeleteEmpComponent } from './shared/delete-emp/delete-emp.component';
 import { DemoDirective } from './directives/demo.directive';
+import { LoginComponent } from './pages/login/login.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { DemoDirective } from './directives/demo.directive';
     EmployeeComponent,
     AddEmpComponent,
     DeleteEmpComponent,
-    DemoDirective
+    DemoDirective,
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
