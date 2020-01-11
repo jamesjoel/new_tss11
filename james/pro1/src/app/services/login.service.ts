@@ -10,11 +10,13 @@ export class LoginService {
 
   constructor(private _http : HttpClient, private _router : Router) { }
 
+  
+  
   login(obj:Login) {
     return this._http.post<any>("http://localhost:3000/api/login", obj);
   }
   isLoggedIn() {
-    if(localStorage.token){
+    if(localStorage.getItem("token")){
       return true;
     }
     else{
@@ -24,6 +26,9 @@ export class LoginService {
   logout() {
     localStorage.removeItem("token");
     this._router.navigate(["/login"]);
+  }
+  getToken() {
+    return localStorage.getItem("token");
   }
 
 
