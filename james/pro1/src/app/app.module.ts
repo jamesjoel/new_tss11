@@ -15,6 +15,7 @@ import { DeleteEmpComponent } from './shared/delete-emp/delete-emp.component';
 import { DemoDirective } from './directives/demo.directive';
 import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     DeleteEmpComponent,
     DemoDirective,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
