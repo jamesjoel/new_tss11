@@ -16,6 +16,7 @@ import { DemoDirective } from './directives/demo.directive';
 import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { DiscountPipe } from './helpers/discount.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
     DemoDirective,
     LoginComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    DiscountPipe
   ],
   imports: [
     BrowserModule,

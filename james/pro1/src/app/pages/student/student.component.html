@@ -8,13 +8,18 @@
         <tr>
             <th>S.No.</th>
             <th>Name</th>
-            <th>View</th>
+            <th>Age</th>
+            <th>Fee</th>
+            <th>Discount</th>
+            
             
         </tr>
         <tr *ngFor="let student of students; index as n">
             <td>{{ n+1 }}</td>
             <td>{{ student.name }}</td>
-            <td><button class="btn btn-sm btn-info">Detail</button></td>
+            <td>{{ student.age }}</td>
+            <td>{{ student.fee | currency : '&#8377;' }}</td>
+            <td>{{ student.fee | discount : student.age : student | currency : 'INR' }}</td>
             
             
         </tr>
