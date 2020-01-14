@@ -15,22 +15,73 @@ var user = [
         id : 1,
         full_name : "Rohit",
         username : "rohit@gmail.com",
-        password : "11"
+        password : "11",
+        city : "indore",
+        gender : "male"
     },
     {
         id: 2,
         full_name: "Swati",
         username: "swati@gmail.com",
-        password: "11"
+        password: "11",
+        city : "bhopal",
+        gender : "female"
     },
     {
         id: 3,
         full_name: "James",
         username: "james@gmail.com",
-        password: "22"
+        password: "22",
+        city : "indore",
+        gender : "male"
     }
 
 ]
+
+app.get("/api/getuser", backdoor, function(req, res){
+    // console.log(req.userData);
+    var id = req.userData.id;
+    var n=0;
+    for(var i=0; i<user.length; i++){
+        if(user[i].id == id) {
+            n=i;
+            break;
+        }
+    }
+    var obj = user[n];
+    delete obj.password;
+    res.status(200).send(obj);
+    return;
+
+});
+
+function backdoor(req, res, next) {
+    // console.log("----------------", req.headers);
+    if (!req.headers.authorization) {
+        res.status(401).send({ msg: "Unathorized User" });
+    }
+    else {
+        if (req.headers.authorization == "") {
+            res.status(401).send({ msg: "Unathorized User" });
+
+        }
+        else {
+            var token = req.headers.authorization;
+            var payload = jwt.verify(token, "this is my secret key");
+            if (!payload) {
+                res.status(401).send({ msg: "Unathorized User" });
+
+            }
+            else {
+                req.userData = payload;
+                next();
+            }
+        }
+    }
+}
+
+
+
 
 
 app.post("/api/login", function(req, res){
@@ -70,6 +121,10 @@ app.post("/api/login", function(req, res){
     }
 
 });
+
+
+
+
 
 
 app.listen(3000, function(){

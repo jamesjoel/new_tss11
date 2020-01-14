@@ -7,8 +7,14 @@ import { EmployeeComponent } from './pages/employee/employee.component';
 import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AuthGuard } from './guard/auth.guard';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
+  {
+    path : "profile",
+    component : ProfileComponent,
+    canActivate : [AuthGuard]
+  },
   {
     path : "dashboard",
     component: DashboardComponent,
