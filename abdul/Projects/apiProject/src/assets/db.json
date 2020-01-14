@@ -1,0 +1,28 @@
+{
+  "employee":[
+    {
+      "id" :1,
+      "first_name": "Abdul",
+      "last_name" : "ishan",
+      "contact": 12345
+    },
+    {
+      "id" :2,
+      "first_name": "mohan",
+      "last_name" : "singh",
+      "contact": 343543
+    },
+    {
+      "id" :1,
+      "first_name": "prakash",
+      "last_name" : "kumar",
+      "contact": 97349
+    },
+    {
+      "id" :1,
+      "first_name": "ashutosh",
+      "last_name" : "panday",
+      "contact": 45948
+    }
+  ]
+}

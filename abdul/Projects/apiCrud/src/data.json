@@ -1,0 +1,12 @@
+{
+  "Students": [
+    {
+      "id": 1,
+      "first_name": "Abdul",
+      "last_name": "Ishan",
+      "email": "ab@gmail.com",
+      "city": "Indore",
+      "phone": 329434
+    }
+  ]
+}

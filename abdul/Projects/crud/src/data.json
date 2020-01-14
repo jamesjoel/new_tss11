@@ -1,0 +1,40 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "full_name": "ishan khan",
+      "email": "ab@gmail.com",
+      "phone": 793485
+    },
+    {
+      "id": 2,
+      "full_name": "khan abdul",
+      "email": "khan@gmail.com",
+      "phone": 793485
+    },
+    {
+      "id": 4,
+      "full_name": "anil",
+      "email": "anil@gmail.com",
+      "phone": 793485
+    },
+    {
+      "full_name": "aaa",
+      "email": "aaa",
+      "phone": "1111",
+      "id": 12
+    },
+    {
+      "full_name": "joidfgjr",
+      "email": "jdfknhklj",
+      "phone": "kjnk",
+      "id": 14
+    },
+    {
+      "full_name": "mohd kalam",
+      "email": "kcdsmb",
+      "phone": "bsdjbf",
+      "id": 17
+    }
+  ]
+}

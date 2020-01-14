@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+
+     <!-- Detail Modal -->
+
+      <div id="addModal" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              {{parentObj.id ? "Update" : "Add"}} Student
+              <a  data-dismiss="modal">X</a>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="fname">Full Name</label>
+                <input type="text" name="fname" class="form-control" [(ngModel)]="parentObj.full_name" placeholder="Enter First Name" >
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" name="email" class="form-control" [(ngModel)]="parentObj.email" placeholder="Enter Email" >
+              </div>
+              <div class="form-group">
+                <label for="gender">Email</label>
+                <input type="radio" name="gender" value="male" [(ngModel)]="parentObj.gender">Male
+                <input type="radio" name="gender" value="female" [(ngModel)]="parentObj.gender">Male
+              </div>
+              <select name="city" class="form-control">
+                <option value="">Select</option>
+                <option value="indore">indore</option>
+                <option value="bhopal">bhopal</option>
+                <option value="jabalpur">jabalpur</option>
+                <option value="katni">katni</option>
+              </select>
+              <div class="form-group">
+                <label for="contact">Contact</label>
+                <input type="text" name="contact" class="form-control" [(ngModel)]="parentObj.phone" placeholder="Enter Contact Number" >
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-warning" (click)="addUser()" data-dismiss="modal">{{parentObj.id ? "Update" : "Add New"}}</button>
+              <button class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      

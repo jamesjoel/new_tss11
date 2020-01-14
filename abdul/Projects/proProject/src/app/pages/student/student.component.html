@@ -1,4 +1,16 @@
-<h1>hi</h1>
-<div *ngFor="let x of allStudentData">
-  <h1>{{x.name}}</h1>
-</div>
+<table class="table table-bordered table dark">
+  <tr>
+    <th>S. No</th>
+    <th>Name</th>
+    <th>Details</th>
+    <th>Details</th>
+  </tr>
+  <tr *ngFor="let student of allStudentData; index as i">
+    <td>{{i+1}}</td>
+    <td>{{student.name}}</td>
+    <td><button class="btn btn-warning" data-target="#detailModal" (click)="viewDetail(student)" data-toggle="modal">View</button></td>
+    <td><button class="btn btn-danger" data-target="#deleteModal" (click)="deleteStudent(student)" data-toggle="modal">Delete</button></td>
+  </tr>
+</table>
+
+<app-modal [parentData]="studentData" (sendToParent)="deleteNow($event)"></app-modal>
