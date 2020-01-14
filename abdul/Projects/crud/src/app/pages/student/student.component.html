@@ -1,0 +1,23 @@
+<button class="btn btn-primary my-4" data-target="#addModal" data-toggle="modal" (click)="emptyObj()">Add New</button>
+<table class="table table-dark table-striped table-bordered">
+  <tr>
+    <th>S. No</th>
+    <th>Full Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let student of allStudent; index as i">
+    <td>{{i+1}}</td>
+    <td>{{student.full_name}}</td>
+    <td>{{student.email}}</td>
+    <td>{{student.phone}}</td>
+    <td colspan="2">
+      <button class="btn btn-info mr-2" data-target="#addModal" (click)="updateStudent(student)" data-toggle="modal">Edit</button>
+      <button class="btn btn-danger" data-target="#deleteModal" (click)="askdelete(student)" data-toggle="modal">Delete</button>
+    </td>
+  </tr>
+</table>
+
+<app-add-modal [parentObj]="singleObj" (fromChiled)="childObj($event)"></app-add-modal>
+<app-delete-modal [parentObj]="singleObj" (sendObj)="deleteNow($event)"></app-delete-modal>
