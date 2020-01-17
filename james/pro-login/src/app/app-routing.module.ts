@@ -5,11 +5,16 @@ import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { AuthGuard } from './gurds/auth.guard';
 import { AfterLoginGuard } from './gurds/after-login.guard';
+import { CheckComponent } from './pages/check/check.component';
 
 const routes: Routes = [
   {
     path : "",
     component : HomeComponent
+  },
+  {
+    path : "check",
+    component : CheckComponent
   },
   {
     path : "login",

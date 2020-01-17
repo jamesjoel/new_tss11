@@ -36,7 +36,11 @@ var user = [
         gender : "male"
     }
 
-]
+];
+
+app.get("/api/demo", backdoor, function(req, res){
+    res.status(200).send(req.headers.authorization);
+});
 
 app.get("/api/getuser", backdoor, function(req, res){
     // console.log(req.userData);

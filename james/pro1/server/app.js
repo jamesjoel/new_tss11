@@ -6,6 +6,12 @@ var jwt = require("jsonwebtoken");
 
 app.use(bodyParser());
 app.use(cors());
+app.use(express.static(__dirname+"/public/js"));
+
+app.get("/", function(req, res){
+
+    res.sendFile(__dirname+"/views/index.html");
+});
 
 
 
@@ -34,6 +40,14 @@ var user = [
         password: "22",
         city : "indore",
         gender : "male"
+    },
+    {
+        id: 4,
+        full_name: "Amar",
+        username: "amar@gmail.com",
+        password: "11",
+        city: "indore",
+        gender: "male"
     }
 
 ]
