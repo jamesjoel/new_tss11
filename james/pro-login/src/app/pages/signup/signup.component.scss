@@ -1,0 +1,10 @@
+.ng-invalid{
+    border : 1px solid red;
+}
+#myForm{
+    border: none !important;
+}
+
+.ng-pristine.ng-invalid{
+    border:1px solid #ced4da;
+}

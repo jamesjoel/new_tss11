@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form id="myForm" [formGroup]="myForm">
+                    
+            <h3>Signup</h3>
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" formControlName="f_name" class="form-control" />
+                <p class="text-danger" *ngIf="myForm.controls['f_name'].hasError('required') && (myForm.controls['f_name'].touched || myForm.controls['f_name'].dirty)">
+                    Insert Your Full Name
+                </p>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" formControlName="email" class="form-control" />
+                <p class="text-danger" *ngIf="myForm.controls['email'].hasError('required') && (myForm.controls['email'].touched || myForm.controls['email'].dirty)">
+                    Insert Your Email
+                </p>
+                <p class="text-danger" *ngIf="myForm.controls['email'].hasError('email') && (myForm.controls['email'].touched || myForm.controls['email'].dirty)">
+                    Insert Correct Email Id
+                </p>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" formControlName="password" class="form-control" />
+                <p class="text-danger" *ngIf="myForm.controls['password'].hasError('required') && (myForm.controls['password'].touched || myForm.controls['password'].dirty)">
+                    Insert Your Password
+                </p>
+                <p class="text-danger"
+                    *ngIf="myForm.controls['password'].hasError('minlength') && (myForm.controls['password'].touched || myForm.controls['password'].dirty)">
+                    Password should be min 8 Char.
+                </p>
+            </div>
+            <div class="form-group">
+                <label>Address</label>
+                <textarea class="form-control" formControlName="address"></textarea>
+                <p class="text-danger" *ngIf="myForm.controls['address'].hasError('required') && (myForm.controls['address'].touched || myForm.controls['address'].dirty)">
+                    Insert Your Full Address
+                </p>
+            </div>
+            <input [disabled]="! myForm.valid" (click)="add()" type="submit" value="Save" class="btn btn-primary" />
+            </form>
+        </div>
+    </div>
+</div>

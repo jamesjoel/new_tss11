@@ -6,11 +6,16 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { AuthGuard } from './gurds/auth.guard';
 import { AfterLoginGuard } from './gurds/after-login.guard';
 import { CheckComponent } from './pages/check/check.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 const routes: Routes = [
   {
     path : "",
     component : HomeComponent
+  },
+  {
+    path : "signup",
+    component : SignupComponent
   },
   {
     path : "check",

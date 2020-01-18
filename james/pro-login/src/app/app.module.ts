@@ -12,6 +12,9 @@ import { ProfileComponent } from './pages/profile/profile.component';
 
 import { AfterLogin } from './inter/afterlogin';
 import { CheckComponent } from './pages/check/check.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -19,11 +22,13 @@ import { CheckComponent } from './pages/check/check.component';
     HomeComponent,
     LoginComponent,
     ProfileComponent,
-    CheckComponent
+    CheckComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule,
     FormsModule
   ],
