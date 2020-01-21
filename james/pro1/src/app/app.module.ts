@@ -17,6 +17,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { DiscountPipe } from './helpers/discount.pipe';
+import { MoreinfoComponent } from './pages/moreinfo/moreinfo.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { DiscountPipe } from './helpers/discount.pipe';
     LoginComponent,
     DashboardComponent,
     ProfileComponent,
-    DiscountPipe
+    DiscountPipe,
+    MoreinfoComponent
   ],
   imports: [
     BrowserModule,

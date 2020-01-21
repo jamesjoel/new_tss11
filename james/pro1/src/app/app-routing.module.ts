@@ -8,12 +8,18 @@ import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AuthGuard } from './guard/auth.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { MoreinfoComponent } from './pages/moreinfo/moreinfo.component';
 
 const routes: Routes = [
   {
     path : "profile",
     component : ProfileComponent,
     canActivate : [AuthGuard]
+  },
+  {
+    path : "employee/info/:id",
+    component : MoreinfoComponent
+
   },
   {
     path : "dashboard",

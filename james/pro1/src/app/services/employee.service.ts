@@ -10,8 +10,15 @@ export class EmployeeService {
 
   constructor(private _http : HttpClient) { }
 
-  getEmployee() {
-    return this._http.get<any>("http://localhost:3000/employees")
+  getEmployee(id=null) {
+    if(id!=null){
+
+      return this._http.get<any>("http://localhost:3000/employees/"+id)
+    }
+    else{
+
+      return this._http.get<any>("http://localhost:3000/employees")
+    }
 
   }
   updateEmployee(obj:Employee) {
