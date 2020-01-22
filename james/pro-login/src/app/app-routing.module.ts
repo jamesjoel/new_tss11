@@ -7,8 +7,13 @@ import { AuthGuard } from './gurds/auth.guard';
 import { AfterLoginGuard } from './gurds/after-login.guard';
 import { CheckComponent } from './pages/check/check.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { NewSignupComponent } from './pages/new-signup/new-signup.component';
 
 const routes: Routes = [
+  {
+    path : "newsignup",
+    component : NewSignupComponent
+  },
   {
     path : "",
     component : HomeComponent

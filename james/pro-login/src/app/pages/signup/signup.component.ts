@@ -22,8 +22,13 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
   }
   add() {
-    console.log(this.myForm);
-    return false;
+    if(this.myForm.invalid){
+      return;
+    }
+    console.log(this.myForm.value);
+  }
+  get f(){
+    return this.myForm.controls;
   }
 
 }
