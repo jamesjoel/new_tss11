@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Match, Demo } from '../../helpers/myval';
 @Component({
   selector: 'app-new-signup',
   templateUrl: './new-signup.component.html',
@@ -20,7 +21,12 @@ export class NewSignupComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
-      acceptTerms: [false, Validators.requiredTrue]
+      acceptTerms: [false, Validators.requiredTrue],
+      demo : ['', Validators.required]
+    },
+    {
+      // validator1: Match('password', 'confirmPassword'),
+      validator: [Demo('demo'), Match('password', 'confirmPassword')]
     });
     this.myForm = this.formBuilder.group({
       f_name : ["", [Validators.required, Validators.minLength(5)]]

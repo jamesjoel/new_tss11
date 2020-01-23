@@ -15,6 +15,7 @@ import { CheckComponent } from './pages/check/check.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NewSignupComponent } from './pages/new-signup/new-signup.component';
+import { BoxComponent } from './shared/box/box.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { NewSignupComponent } from './pages/new-signup/new-signup.component';
     ProfileComponent,
     CheckComponent,
     SignupComponent,
-    NewSignupComponent
+    NewSignupComponent,
+    BoxComponent
   ],
   imports: [
     BrowserModule,
