@@ -18,6 +18,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { DiscountPipe } from './helpers/discount.pipe';
 import { MoreinfoComponent } from './pages/moreinfo/moreinfo.component';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,9 @@ import { MoreinfoComponent } from './pages/moreinfo/moreinfo.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    UserModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

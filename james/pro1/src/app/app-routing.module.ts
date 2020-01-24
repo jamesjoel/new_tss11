@@ -12,6 +12,11 @@ import { MoreinfoComponent } from './pages/moreinfo/moreinfo.component';
 
 const routes: Routes = [
   {
+    path : "user",
+    pathMatch : 'prefix',
+    loadChildren: './user/user.module#UserModule'
+  },
+  {
     path : "profile",
     component : ProfileComponent,
     canActivate : [AuthGuard]

@@ -20,6 +20,9 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="employee">Employee</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="user/account">Account</a>
+      </li>
       <ng-template [ngIf]="_loginService.isLoggedIn()" [ngIfElse]="beforeLogin">
           <li class="nav-item">
             <a class="nav-link" routerLink="dashboard">Dashboard</a>
