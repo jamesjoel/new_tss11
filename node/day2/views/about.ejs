@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: #62ACED;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+
+
+</head>
+
+<body>
+    <h2>This is About Page</h2>
+    <table border="1" align="center">
+        <tr>
+            <td>S.No.</td>
+            <td>Name</td>
+            <td>Age</td>
+            <td>City</td>
+        </tr>
+        <% data.forEach(function(x, n){ %>
+            <tr>
+                <td><%= n+1 %></td>
+                <td><%= x.name %></td>
+                <td><%= x.age %></td>
+                <td><%= x.city %></td>
+            </tr>
+        <% }) %>
+
+          
+    </table>
+</body>
+
+</html>
