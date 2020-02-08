@@ -1,0 +1,28 @@
+{
+  "Users" : [
+    {
+      "id" : 1,
+      "name" : "abdul",
+      "age" : 23,
+      "city" : "indore"
+    },
+    {
+      "id" : 2,
+      "name" : "ishan",
+      "age" : 21,
+      "city" : "bhopal"
+    },
+    {
+      "id" : 3,
+      "name" : "khan",
+      "age" : 13,
+      "city" : "jabalpur"
+    },
+    {
+      "id" : 4,
+      "name" : "marko",
+      "age" : 32,
+      "city" : "chennai"
+    }
+  ]
+}

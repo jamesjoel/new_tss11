@@ -5,7 +5,6 @@ var MongoClient = require("mongodb").MongoClient;
 app.set("view engine", "ejs");
 
 app.use(express.static(__dirname+"/assets"));
-// app.use(express.static(__dirname+"/public"));
 
 app.get("/", (req,res)=>{
   MongoClient.connect("mongodb://localhost:27017", (err,client)=>{

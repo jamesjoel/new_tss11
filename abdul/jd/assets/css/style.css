@@ -1,0 +1,59 @@
+body{
+  background-color: #CCCCCC;
+}
+.logo-img{
+  height: 35px;
+  width: 115px;
+}
+
+.nav-color{
+  background-color: #F0F0F0;
+}
+
+.nav-place{
+  padding-left: 52rem;
+}
+
+.navbar-nav .nav-link {
+  padding: 0.5px 0px !important;
+}
+
+.footer-bg{
+  background-color: #DEDEDE;
+}
+
+.carousel-item {
+  height: 250px;
+}
+
+.carousel-control-prev, .carousel-control-next {
+  top: 200;
+  width: 5%;;
+}
+
+.carousel-control-prev {
+  left: 960px;
+}
+
+.listing{
+  position: relative;
+  top: -230px;
+  left: 40px;
+}
+
+.listing .list-group-item{
+  width: 250px;
+}
+
+.srch-div{
+  background-color: #ffffff;
+  height: 38px;
+  width: 230px;
+  position: relative;
+  border-radius: 5px;
+}
+
+.srch-icon{
+  color: red;
+  margin: 0px;
+}
