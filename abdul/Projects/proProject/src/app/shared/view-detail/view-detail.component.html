@@ -1,0 +1,38 @@
+<div id="detailModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        User Detail
+        <a  href="#" data-dismiss="modal">X</a>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered">
+          <tr>
+            <th>User Id</th>
+            <td>1.</td>
+          </tr>
+          <tr>
+            <th>Name</th>
+            <td>Abdul</td>
+          </tr>
+          <tr>
+            <th>Age</th>
+            <td>25</td>
+          </tr>
+          <tr>
+            <th>City</th>
+            <td>Indore</td>
+          </tr>
+          <tr>
+            <th>Edit/Update</th>
+            <td><button class="btn btn-outline-dark" (click)="editUser()">Edit</button></td>
+          </tr>
+        </table>        
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-danger" (click)="deleteUser()" data-dismiss="modal">Delete</button>
+        <button class="btn btn-warning" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
