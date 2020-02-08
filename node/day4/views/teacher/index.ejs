@@ -1,0 +1,53 @@
+<div class="container">
+    <h2>Teachers</h2>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h4>Add New Teacher</h4>
+            <form action="/teacher/save" method="post">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="name" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Salary</label>
+                    <input type="text" name="salary" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <select class="form-control" name="city">
+                        <option>Select</option>
+                        <option>indore</option>
+                        <option>bhopal</option>
+                        <option>mumbai</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Add" class="btn btn-primary" />
+                </div>
+            </form>
+
+            <table class="table table-hover table-bordered table-dark">
+                <tr>
+                    <th>S.No.</th>
+                    <th>Name</th>
+                    <th>Salary</th>
+                    <th>City</th>
+                </tr>
+                <%  result.forEach(function(x, n){ %>
+                    <tr>
+                        <td><%= n+1 %></td>
+                        <td><%= x.name %></td>
+                        <td><%= x.salary %></td>
+                        <td><%= x.city %></td>
+                    </tr>
+                <% }) %>
+
+
+
+
+
+
+            </table>
+        </div>
+    </div>
+</div>
