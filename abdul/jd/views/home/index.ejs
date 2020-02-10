@@ -23,24 +23,51 @@
       </div>
     </div>
   </div>
-  <div class="row listing">
+  <div class="row ">
     <div class="col-md-3">
-        <div class="list-group">
+        <div class="list-group listing">
           <a href="#" class="list-group-item list-group-item-action">
             <i class="fa fa-newspaper-o" aria-hidden="true"></i> JD News
           </a>
           <a href="#" class="list-group-item list-group-item-action"><i class="fa fa-building-o" aria-hidden="true"></i> Hotels</a>
           <a href="#" class="list-group-item list-group-item-action"><i class="fa fa-plane" aria-hidden="true"></i> Air Ticket</a>
           <a href="#" class="list-group-item list-group-item-action"><i class="fa fa-money" aria-hidden="true"></i> Apply For Loan</a>
-          <a href="#" class="list-group-item list-group-item-action disabled"><i class="fa fa-car" aria-hidden="true"></i> Auto Care</a>
+          <a href="#" class="list-group-item list-group-item-action"><i class="fa fa-car" aria-hidden="true"></i> Auto Care</a>
         </div>
     </div>
     <div class="col-md-9">
-      <div class="srch-div">
+      <div class="srch-div listing">
         <form class="form-inline">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <span class="srch-icon"></span><i class="fa fa-search srch-icon" aria-hidden="true"></i></span>
+          <input class="form-control mr-sm-2" type="search" placeholder="Search for anything, anywhere in india" aria-label="Search">
+          <button class="btn srch-btn"><i class="fa fa-search srch-icon" aria-hidden="true"></i></button>
         </form>
+      </div>
+      <div class="card-divs">
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-10">
+            <p class="head-tab">Popular Services</p>
+            <div class="row">
+              <%  result.forEach(function(x){ %>
+              <div class="col-md-6">
+                <div class="card-div">
+                  <div class="left-div">
+                    <p class="text-heading"><%= x.name %></p>
+                    <p class="sub-head">order-online</p>
+                    <p class="sub-head">book table</p>
+                    <p class="sub-head">tranding</p>
+                    <p class="sub-head">more</p>
+                  </div>
+                  <div class="right-div">
+                  <img class="crd-img" src="<%= x.img_url %>" alt="Card image cap">
+                  </div>
+                </div>
+              </div>
+              <% }) %>
+            </div>
+          </div>
+          <div class="col-md-1"></div>
+        </div>
       </div>
     </div>
   </div>
