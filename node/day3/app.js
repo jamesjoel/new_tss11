@@ -32,18 +32,8 @@ app.get("/teacher", (req, res)=>{
 
     // Create a Connect to Mongodb with "mongodb://localhost:27017" URL
     MongoClient.connect("mongodb://localhost:27017", (err, client) => {
-        if (err) {
-            console.log(err);
-            return;
-        }
         var db = client.db("tss11_30");
-
         db.collection("teacher").find().toArray((err, result) => {
-            if (err) {
-                console.log(err);
-                return;
-            }
-            // console.log(result);
             res.render("layout", { pagename : "teacher", title : "Teacher", result : result});
         });
     });
