@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-md-8 offset-md-2">
             <h4>Add New Teacher</h4>
-            <form action="/teacher/save" method="post">
+            <form action="" method="post">
                 <div class="form-group">
                     <label>Name</label>
                     <input type="text" name="name" class="form-control" />
@@ -32,6 +32,8 @@
                     <th>Name</th>
                     <th>Salary</th>
                     <th>City</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
                 <%  result.forEach(function(x, n){ %>
                     <tr>
@@ -39,6 +41,8 @@
                         <td><%= x.name %></td>
                         <td><%= x.salary %></td>
                         <td><%= x.city %></td>
+                        <td><a href="/teacher/edit/<%= x._id %>" class="btn btn-sm btn-warning">Edit</a></td>
+                        <td><a href="/teacher/delete/<%= x._id %>" class="btn btn-sm btn-danger">Delete</a></td>
                     </tr>
                 <% }) %>
 
