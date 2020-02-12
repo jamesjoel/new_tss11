@@ -18,3 +18,9 @@ module.exports.delete=function(where, cb){
         db.collection("teacher").remove(where, cb);
     })
 }
+module.exports.update=function(where, obj, cb){
+    connect((err, client)=>{
+        var db = client.db("tss11");
+        db.collection("teacher").update(where, {$set : obj}, cb);
+    })
+}

@@ -20,8 +20,21 @@ routes.get("/edit/:id", (req, res)=>{
 });
 
 routes.post("/update", (req, res)=>{
-   console.log(req.body);
+   // console.log(req.body);
+   var objid = mongodb.ObjectId(req.body.id);
+   delete req.body.id;
+   // when we update data do not send id to mongodb 
+   Teacher.update({ _id : objid }, req.body, (err, result)=>{
+      res.redirect("/teacher");
+   })
 })
+
+
+/*
+
+Teacher.update({city : "indore"}, { salary : 10000})
+*/
+
 
 
 
