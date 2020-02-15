@@ -1,0 +1,35 @@
+<h2>User Prfile</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <table class="table table-hover table-dark table-bordered">
+                <tr>
+                    <td>Full Name</td>
+                    <td><%= result.name %></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><%= result.email %></td>
+                </tr>
+                <tr>
+                    <td>Profile Pic</td>
+                    <td>
+                        <img src="/images/avatar.png" height="50" width="50" />
+                        <br />
+                        <a href="/profile/changeimage">Change</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Contact</td>
+                    <td><%= result.contact %></td>
+                </tr>
+                <tr>
+                    <td>City</td>
+                    <td><%= result.city %></td>
+                </tr>
+            </table>
+            <a href="/profile/edit" class="btn btn-sm btn-info">Edit</a>
+            <a href="/profile/changepassword" class="btn btn-sm btn-info">Change Password</a>
+        </div>
+    </div>
+</div>
