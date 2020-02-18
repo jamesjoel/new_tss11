@@ -10,7 +10,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { DeleteComponent } from './shared/delete/delete.component';
 import { ViewDetailComponent } from './shared/view-detail/view-detail.component';
 import { AddUserComponent } from './shared/add-user/add-user.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditDetailComponent } from './pages/edit-detail/edit-detail.component';
+import { DashboaredComponent } from './pages/dashboared/dashboared.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { SigninComponent } from './pages/signin/signin.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +27,19 @@ import { FormsModule } from '@angular/forms';
     DeleteComponent,
     ViewDetailComponent,
     AddUserComponent,
+    EditDetailComponent,
+    DashboaredComponent,
+    PageNotFoundComponent,
+    SignupComponent,
+    SigninComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

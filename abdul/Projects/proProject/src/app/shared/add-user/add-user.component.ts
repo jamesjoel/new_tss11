@@ -1,5 +1,6 @@
-import { Component, OnInit, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter, Input } from '@angular/core';
 import { User } from '../../interfaces/user';
+import { UserService } from '../../services/user.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -9,22 +10,20 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AddUserComponent implements OnInit {
 
-  dataObj :User = {
-    name : "",
-    age : null,
-    city :""
-  }
+  // dataObj :User;
 
+  @Input() getObj :User;
   @Output() sendObj = new EventEmitter;
 
-  constructor(private route : ActivatedRoute) { }
+  constructor(private route : ActivatedRoute, private userServ : UserService) { }
 
   ngOnInit() {
+    this.getObj = this.userServ.emptyObj();
   }
 
   addUser(){
     // console.log(this.dataObj);
-    this.sendObj.emit(this.dataObj);
+    this.sendObj.emit(this.getObj);
   }
 
 }

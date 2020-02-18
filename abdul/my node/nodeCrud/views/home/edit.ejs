@@ -1,0 +1,27 @@
+<div class="row my-4">
+  <div class="col-md-8 offset-md-2">
+    <h3 class="text-success">Update User</h3>
+    <form action="/update" method="post">
+      <div class="form-group">
+        <input type="hidden" name="id" value="<%= singlData._id %>">
+        <label for="name">Full Name</label>
+        <input type="text" class="form-control" placeholder="Enter Full Name" name="name" id="name" value="<%= singlData.name %>">
+      </div>
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="text" class="form-control" placeholder="Enter Age" name="age" id="age" value="<%= singlData.age %>">
+      </div>
+      <div class="form-group">
+        <label for="city">City:</label>
+        <select name="city" id="city" class="form-control">
+          <option >Select City</option>
+          <option <% if(singlData.city=="indore") {%> selected='selected' <% } %></option>Indore</option>
+          <option <% if(singlData.city=="bhopal") {%> selected='selected' <% } %></option>Bhopal</option>
+          <option <% if(singlData.city=="jabalpur") {%> selected='selected' <% } %></option>Jabalpur</option>
+          <option <% if(singlData.city=="mumbai") {%> selected='selected' <% } %></option>Mumbai</option>
+        </select>
+      </div>
+      <input type="submit" value="update" class="btn btn-primary">
+    </form>
+  </div>
+</div>

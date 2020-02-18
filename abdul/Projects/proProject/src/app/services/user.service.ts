@@ -12,9 +12,24 @@ export class UserService {
 
   constructor(private http : HttpClient) { }
   
-  getAllUsers():Observable<User[]>{
-    return this.http.get<User[]>("http://localhost:3000/Users")
-    .pipe(catchError(this.errorHandler));
+  getAllUsers(id=null):Observable<User[]>{
+    if(id!=null){
+      return this.http.get<User[]>("http://localhost:3000/Users/"+id);
+    }else{
+      return this.http.get<User[]>("http://localhost:3000/Users");
+    }
+  }
+
+  addUser(obj:User){
+    return this.http.post<User[]>("http://localhost:3000/Users",obj);
+  }
+
+  deleteUser(obj:User){
+    return this.http.delete<User[]>("http://localhost:3000/Users/"+obj.id);
+  }
+
+  updateUser(id, obj:User){
+    return this.http.put<User[]>("http://localhost:3000/Users/"+id,obj);
   }
 
   errorHandler(error : HttpErrorResponse){

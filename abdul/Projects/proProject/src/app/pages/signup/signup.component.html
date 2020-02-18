@@ -1,0 +1,85 @@
+<div class="row my-4">
+  <div class="col-md-8 offset-md-2">
+    <form [formGroup]="formValidate">
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="email" class="form-control" id="fullName" formControlName="fullName" [ngClass]="{'is-invalid' : submitted && check.fullName.errors}" placeholder="Enter Full Name">
+        <div class="text-danger " *ngIf = "submitted && check.fullName.errors">
+          <div *ngIf="check.fullName.errors.required">Insert your Full Name</div>
+          <div *ngIf="check.fullName.errors.minlength">Insert Atleast 3 charecter</div>
+          <div *ngIf="check.fullName.errors.maxlength">Name should be 30 or less charecter</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" formControlName="email" [ngClass]="{'is-invalid' : submitted && check.email.errors}" id="email" placeholder="Enter Email Address">
+        <div class="text-danger " *ngIf="submitted && check.email.errors">
+          <div *ngIf="check.email.errors.required">Enter your Email</div>
+          <div *ngIf="check.email.errors.email">Enter correct Email</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" formControlName="password" [ngClass]="{'is-invalid' : submitted && check.password.errors}" id="password" placeholder="Enter Password">
+        <div class="text-danger " *ngIf="submitted && check.password.errors">
+          <div *ngIf="check.password.errors.required">Enter Password</div>
+          <div *ngIf="check.password.errors.minlength">Password should be atleast 8 charecter</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="cnf_password">Confirm Password</label>
+        <input type="password" class="form-control" formControlName="cnf_password" [ngClass]="{'is-invalid' : submitted && check.cnf_password.errors}" id="cnf_password" placeholder="Enter Password">
+        <div class="text-danger invalid-feedback" *ngIf="submitted && check.cnf_password.errors">
+          <div *ngIf = "check.cnf_password.errors.required">Enter Confirm Password</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <textarea id="address" cols="30" rows="3" formControlName="address" [ngClass]="{'is-invalid' : submitted && check.address.errors}" class="form-control"></textarea>
+        <div class="text-danger invalid-feedback" *ngIf="submitted && check.address.errors">
+          <div *ngIf="check.address.errors.required">Enter your Address</div>
+          <div *ngIf="check.address.errors.minlength">Address should be atleast 5 charecter</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Gender </label>
+        <input type="radio" name="gender" formControlName="gender" [ngClass]="{'is-invalid' : submitted && check.gender.errors}" value="male"> Male
+        <input type="radio" name="gender" formControlName="gender" [ngClass]="{'is-invalid' : submitted && check.gender.errors}" value="female"> Female
+        <div class="text-danger invalid-feedback" *ngIf="submitted && check.gender.errors">
+          <div *ngIf="check.gender.errors.required">Select a gender</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <select id="city" class="form-control" formControlName="city" [ngClass]="{'is-invalid' : submitted && check.city.errors}">
+          <option value="">Select City</option>
+          <option value="indore">Indore</option>
+          <option value="bhopal">Bhopal</option>
+          <option value="jabalpur">Jabalpur</option>
+          <option value="mumbai">Mumbai</option>
+          <option value="katni">Katni</option>
+        </select>
+        <div class="text-danger invalid-feedback" *ngIf="submitted && check.city.errors">
+          <div *ngIf="check.city.errors.required">Select a city</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="contact">Contact</label>
+        <input type="text" class="form-control" formControlName="contact" [ngClass]="{'is-invalid' : submitted && check.contact.errors}" id="contact" placeholder="Enter Contact Number">
+        <div class="text-danger " *ngIf="submitted && check.contact.errors">
+          <div *ngIf="check.contact.errors.required">Enter Contact Number</div>
+          <div *ngIf="check.contact.errors.minlength">Enter atleast 6 char</div>
+          <div *ngIf="check.contact.errors.maxlength">Contact should be 12 or lesscharecter</div>
+        </div>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" formControlName="check" [ngClass]="{'is-invalid' : submitted && check.check.errors}" id="check">
+        <label class="form-check-label" for="check">Allow term and conditions</label>
+        <div class="text-danger " *ngIf="submitted && check.check.errors">
+          <div *ngIf="check.check.errors.required">Please accept terms</div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-outline-primary mt-2" (click)="signup()">Signup</button>
+    </form>
+  </div>
+</div>
