@@ -14,7 +14,15 @@
                 <tr>
                     <td>Profile Pic</td>
                     <td>
-                        <img src="/images/avatar.png" height="50" width="50" />
+                        <%
+                        if(result.image){
+                            var path = "/user_image/"+result.image;
+                        }
+                        else{
+                            var path = "/images/avatar.png";
+                        }
+                         %>
+                        <img src="<%= path %>" height="50" width="50" />
                         <br />
                         <a href="/profile/changeimage">Change</a>
                     </td>

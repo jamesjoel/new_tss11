@@ -4,6 +4,9 @@ var mongodb = require('mongodb');
 var User = require("../models/user");
 var sha1 = require("sha1");
 
+var path = require("path");
+
+
 routes.get("/", (req, res) => {
     var objid = mongodb.ObjectId(req.session._id);
     User.find({ _id : objid}, (err, result)=>{
@@ -62,12 +65,55 @@ routes.post("/changepassword", (req, res) => {
 
 
 routes.get("/changeimage", (req, res)=>{
-    res.render("layout", { title: "Change Image", pagename: "profile/changeimage" });
+    res.render("layout", { title: "Change Image", pagename: "profile/changeimage", message : req.flash("msg") });
 
 });
 
 routes.post("/changeimage", (req, res)=>{
-    console.log(req.files);
+    var objid = mongodb.ObjectId(req.session._id);
+    var image = req.files.image; 
+    var name = image.name; // 20.james.hello.1.jpg
+    var size = image.size;
+    
+    var arr = name.split("."); // [20, james, hello, 1, jpg]
+
+    var ext = arr[arr.length-1];
+
+    if(ext == "jpg" || ext == "png" || ext == "jpeg" || ext == "gif")
+    {
+        if (size <= (1024 * 1024 * 2)) {
+            var file_path = path.resolve()+"/public/user_image/"+name;
+            image.mv(file_path, (err)=>{
+                if(err){
+
+                    console.log(err);
+                }
+
+                User.update({ _id : objid }, { image : name }, (err, result)=>{
+                    res.redirect("/profile");
+                });
+
+            });
+        }
+        else {
+            req.flash("msg", "file size error");
+            res.redirect("/profile/changeimage");
+        }
+    }
+    else{
+        req.flash("msg", "file type not allowed");
+        res.redirect("/profile/changeimage")
+    }
+
+    
+
+
+
+   
+
+
+
+
 })
 
 
