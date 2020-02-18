@@ -1,0 +1,49 @@
+<h2>Edit Your Profile</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-header">
+                    Edit/Change
+                </div>
+                <div class="card-body">
+                    <form action="" method="post">
+
+                        <!-- <input type="hidden" name="id" value="<%= result._id %>" />  -->
+
+
+                    <div class="form-group">
+
+                        <label>Full Name</label>
+                        <input value="<%= result.name %>" type="text" class="form-control" name="name" />
+                    </div>
+                    <div class="form-group">
+                    
+                        <label>Email</label>
+                        <input disabled="disabled" value="<%= result.email %>" type="text" class="form-control" name="email" />
+                    </div>
+                    <div class="form-group">
+                    
+                        <label>Contact</label>
+                        <input value="<%= result.contact %>" type="text" class="form-control" name="contact" />
+                    </div>
+                    <div class="form-group">
+                    
+                        <label>City</label>
+                        <select class="form-control" name="city">
+                            <option>Select</option>
+                            <option <% if(result.city=="indore") { %>selected="selected" <% } %>>indore</option>
+                            <option <% if(result.city=="bhopal") { %>selected="selected" <% } %>>bhopal</option>
+                            <option <% if(result.city=="mumbai") { %>selected="selected" <% } %>>mumbai</option>
+                        </select>
+                    </div>
+                   
+                </div>
+                <div class="card-footer">
+                    <input type="submit" value="Update" class="btn btn-primary" />
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

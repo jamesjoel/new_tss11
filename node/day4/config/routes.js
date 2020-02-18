@@ -9,6 +9,7 @@ routes.use("/login", afterLogin, require("../controllers/login"));
 routes.use("/signup", afterLogin, require("../controllers/signup"));
 routes.use("/teacher", backdoor, require("../controllers/teacher"));
 routes.use("/dashboard", backdoor, require("../controllers/dashboard"));
+routes.use("/profile", backdoor, require("../controllers/profile"));
 
 
 routes.get("/logout", (req, res)=>{
