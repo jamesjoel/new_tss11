@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Student } from '../modules/student.interface';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,15 @@ export class StudentService {
 
   allStudentList:Student[];
 
-  constructor() { }
+  constructor(private http : HttpClient) { }
+
+  getAllStudents(){
+    return this.http.get<any>("http://localhost:3000/api/getuser");
+  }
+
+  goLogin(){
+    return this.http.get<any>("http://localhost:3000/api/login");
+  }
 
   allStudents(){
     this.allStudentList=[

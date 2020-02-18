@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Student } from '../../modules/student.interface';
+import { Student } from '../../interfaces/student';
 import { StudentService } from '../../services/student.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,13 +11,16 @@ import { StudentService } from '../../services/student.service';
 })
 export class StudentComponent implements OnInit {
 
-  allStudentData:any = [];
+  allStudentData= [];
   studentData:any={};
 
-  constructor(private _std : StudentService) { }
+  constructor(private _std : StudentService, private router :Router) { }
 
   ngOnInit() {
     this.allStudentData = this._std.allStudents();
+    this._std.getAllStudents().subscribe(result=>{
+      console.log(result)
+    })
   }
 
   viewDetail(data){

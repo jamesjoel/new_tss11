@@ -19,8 +19,8 @@
         </td>
       </tr>
     </table>
-    <app-add-user (sendObj) = addNow($event)></app-add-user>
-    <app-view-detail [getObj]="userObj"></app-view-detail>
-    <app-delete></app-delete>
+    <app-add-user [getObj]="dataObj" (sendObj) = addNow($event) ></app-add-user>
+    <app-view-detail [getObj]="dataObj" (dataObj) = "editNow($event)"></app-view-detail>
+    <app-delete [sendObj] = "dataObj" (delObj) = "deleteNow($event)" ></app-delete>
   </div>
 </div>

@@ -1,0 +1,48 @@
+<div class="row my-4">
+  <div class="col-md-8 offset-md-2">
+    <form action="/action_page.php">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" class="form-control" placeholder="Enter Full Name" name="name" id="name">
+      </div>
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="text" class="form-control" placeholder="Enter Age" id="age">
+      </div>
+      <div class="form-group">
+        <label for="city">City:</label>
+        <select name="city" id="city" class="form-control">
+          <option>Select City</option>
+          <option value="indore">Indore</option>
+          <option value="bhopal">Bhopal</option>
+          <option value="jabalpur">Jabalpur</option>
+          <option value="mumbai">Mumbai</option>
+        </select>
+      </div>
+      <input type="submit" value="update" class="btn btn-primary">
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8 offset-2">
+    <table class="table table-bordered table-striped">
+      <tr>
+        <th>S. No.</th>
+        <th>Full Name</th>
+        <th>Age</th>
+        <th>City</th>
+        <th>Action</th>
+      </tr>
+      <% userData.forEach(function(data, i){ %>
+        <tr>
+          <td><%= i+1 %></td>
+          <td><%= data.name %></td>
+          <td><%= data.age %></td>
+          <td><%= data.city %></td>
+          <td><a href="/edit/<%= data._id %>" class="btn btn-warning" >Edit</a></td>
+        </tr>
+      <% }) %>
+    </table>
+  </div>
+</div>

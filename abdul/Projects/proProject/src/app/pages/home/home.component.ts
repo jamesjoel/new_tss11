@@ -9,12 +9,10 @@ import { User } from '../../interfaces/user';
 })
 export class HomeComponent implements OnInit {
 
+  // Inside 'Home component' and where we use 'service:UserService' we are using json-server for crud operations and every operations on home-component, edit-detail.
+
   allUsers : User[];
-  userObj : User = {
-    name : "",
-    age : null,
-    city : ""
-  }
+  dataObj : User =this.userServ.emptyObj();
 
   constructor(private userServ : UserService) { }
 
@@ -26,26 +24,41 @@ export class HomeComponent implements OnInit {
   }
 
   clearForm(){
-    console.log("cleared form");
+    this.dataObj = this.userServ.emptyObj(); // here we clearing obj on every click of add user
   }
 
   addNow(obj : User){
-    console.log(obj)
+    this.userServ.addUser(obj).subscribe(result=>{
+      this.allUsers.push(obj);
+      console.log("-------new inserted row---",this.allUsers);
+    })
   }
 
   moreInfo(data:User){
-    this.userObj = data;
-    console.log(this.userObj);
+    this.dataObj = data;
   }
 
-  editUser(data:User){
-    this.userObj = data;
-    console.log(this.userObj);
+  editNow(data:User){
+    console.log("==========data--------",data);
+    for(let i=0; i<this.allUsers.length; i++){
+      if(this.allUsers[i].id==data.id){
+        this.allUsers[i] = data;
+        console.log("yes true----------", this.allUsers[i]);
+        break;
+      }
+    }
   }
 
   askDelete(data:User){
-    this.userObj = data;
-    console.log(this.userObj);
+    this.dataObj = data;
+  }
+
+  deleteNow(data:User){
+    // console.log(data);
+    this.userServ.deleteUser(data).subscribe(result=>{
+    let x = this.allUsers.indexOf(data);
+    this.allUsers.splice(x,1);
+    });
   }
 
 }
