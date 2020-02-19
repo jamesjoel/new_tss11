@@ -5,7 +5,8 @@ var User = require("../models/user");
 var sha1 = require("sha1");
 
 var path = require("path");
-
+var random = require("randomstring");
+var fs = require("fs");
 
 routes.get("/", (req, res) => {
     var objid = mongodb.ObjectId(req.session._id);
@@ -82,14 +83,25 @@ routes.post("/changeimage", (req, res)=>{
     if(ext == "jpg" || ext == "png" || ext == "jpeg" || ext == "gif")
     {
         if (size <= (1024 * 1024 * 2)) {
-            var file_path = path.resolve()+"/public/user_image/"+name;
+            User.find({ _id : objid}, (err, result)=>{
+                if(result[0].image){
+                    var oldfilename = result[0].image;
+                    fs.unlinkSync(path.resolve()+"/public/user_image/"+oldfilename);
+                }
+            });
+
+
+
+
+            var new_name = random.generate(30)+"."+ext;
+            var file_path = path.resolve()+"/public/user_image/"+new_name;
             image.mv(file_path, (err)=>{
                 if(err){
 
                     console.log(err);
                 }
 
-                User.update({ _id : objid }, { image : name }, (err, result)=>{
+                User.update({ _id : objid }, { image : new_name }, (err, result)=>{
                     res.redirect("/profile");
                 });
 

@@ -18,6 +18,9 @@ app.use(nocache());
 app.use(upload());
 
 
+
+
+
 app.use(function(req, res, next){
     res.locals.logo = "The Stepping Stone";
     res.locals.session = req.session;
