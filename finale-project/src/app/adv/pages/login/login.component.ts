@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AdvService } from 'src/app/services/adv.service';
+import { AdvLoginService } from '../../../services/adv-login.service';
 import { Adv } from 'src/app/models/adv';
-
+import { Router } from  '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,11 +13,30 @@ export class LoginComponent implements OnInit {
     email : "",
     password : ""
   };
+  message:string;
   constructor(
-    private _advService : AdvService
+    private _advLogin: AdvLoginService,
+    private _router : Router
   ) { }
 
   ngOnInit() {
+  }
+  login() {
+    this._advLogin.doLogin(this.adv).subscribe(result=>{
+      // console.log(result);
+      localStorage.setItem("token", result.token);
+      this._router.navigate(["/dashboard"]);
+    },
+    err=>{
+      // console.log(err.error);
+      if(err.error.status==1){
+        this.message="This Username And Password is Incorrect";
+      }
+      if(err.error.status==2) {
+        this.message="This Password is Incorrect";
+
+      }
+    })
   }
 
 }

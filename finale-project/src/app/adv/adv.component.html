@@ -7,14 +7,31 @@
                 
                     <a class="nav-link" routerLink="">Home</a>
                 </li>
-                <li class="nav-item">
-
-                    <a class="nav-link" routerLink="/adv/login">Login</a>
-                </li>
-                <li class="nav-item">
-
-                    <a class="nav-link" routerLink="/adv/signup">Signup</a>
-                </li>
+                <ng-template [ngIf]="_advLogin.isLoggedIn()" [ngIfElse]="beforeLogin">
+                    <li class="nav-item">
+                    
+                        <a class="nav-link" routerLink="/adv/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                    
+                        <a class="nav-link" routerLink="/adv/profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                    
+                        <a class="nav-link" style="cursor : pointer;" (click)="_advLogin.logout()">Logout</a>
+                    </li>
+                </ng-template>
+                <ng-template #beforeLogin>
+                    <li class="nav-item">
+                    
+                        <a class="nav-link" routerLink="/adv/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                    
+                        <a class="nav-link" routerLink="/adv/signup">Signup</a>
+                    </li>
+                </ng-template>
+                
             </ul>
 
 
