@@ -7,6 +7,7 @@ import { SingupComponent } from './pages/singup/singup.component';
 import { AdvGuardGuard } from '../guards/adv-guard.guard';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { ServiceComponent } from './pages/service/service.component';
 
 
 
@@ -32,6 +33,11 @@ const routes: Routes = [
         path : "profile",
         canActivate : [AdvGuardGuard],
         component : ProfileComponent
+      },
+      {
+        path: "service",
+        canActivate: [AdvGuardGuard],
+        component: ServiceComponent
       }
     ]
   }

@@ -14,12 +14,17 @@ export class LoginComponent implements OnInit {
     password : ""
   };
   message:string;
+  msg:string;
   constructor(
     private _advLogin: AdvLoginService,
     private _router : Router
   ) { }
 
   ngOnInit() {
+    if(localStorage.getItem("msg")){
+      this.msg=localStorage.getItem("msg");
+      localStorage.removeItem("msg");
+    }
   }
   login() {
     this._advLogin.doLogin(this.adv).subscribe(result=>{

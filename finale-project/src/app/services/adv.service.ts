@@ -20,4 +20,10 @@ export class AdvService {
       headers : { Authorization : localStorage.getItem("token") }
     })
   }
+
+  addService(obj){
+    return this._http.post<any>(this.APIUrl + "adv/addservcie",obj, {
+      headers: { Authorization: localStorage.getItem("token") }
+    });
+  }
 }

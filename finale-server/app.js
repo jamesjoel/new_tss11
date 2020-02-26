@@ -9,8 +9,12 @@ var url = "mongodb://localhost:27017";
 var jwt = require("jsonwebtoken");
 var mongodb = require("mongodb");
 
+var upload = require("express-fileupload");
+
+
 app.use(bodyParser());
 app.use(cors());
+app.use(upload());
 
 app.post("/api/adv/signup", (req, res)=>{
     MongoClient.connect(url, (err, client)=>{
@@ -22,6 +26,10 @@ app.post("/api/adv/signup", (req, res)=>{
 });
 
 
+
+
+
+// after login view profile
 app.get("/api/adv/signup", backdoor, (req, res)=>{
     var obj = req.userdata;
     MongoClient.connect(url, (err, client)=>{
@@ -32,6 +40,14 @@ app.get("/api/adv/signup", backdoor, (req, res)=>{
         })
     });
 });
+
+
+app.post("/api/adv/addservcie", backdoor, (req, res)=>{
+    console.log("-----",req.files);
+    console.log("*****",JSON.parse(req.body.data));
+});
+
+
 
 
 function backdoor(req, res, next){
