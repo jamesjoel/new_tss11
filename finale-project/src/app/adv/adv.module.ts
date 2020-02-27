@@ -9,10 +9,11 @@ import { AdvComponent } from './adv.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ServiceComponent } from './pages/service/service.component';
+import { UploadComponent } from './pages/upload/upload.component';
 
 
 @NgModule({
-  declarations: [SingupComponent, LoginComponent, AdvComponent, DashboardComponent, ProfileComponent, ServiceComponent],
+  declarations: [SingupComponent, LoginComponent, AdvComponent, DashboardComponent, ProfileComponent, ServiceComponent, UploadComponent],
   imports: [
     CommonModule,
     AdvRoutingModule,

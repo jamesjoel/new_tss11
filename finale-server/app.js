@@ -16,6 +16,9 @@ app.use(bodyParser());
 app.use(cors());
 app.use(upload());
 
+
+app.use(express.static(__dirname+"/public"));
+
 app.post("/api/adv/signup", (req, res)=>{
     MongoClient.connect(url, (err, client)=>{
         var db = client.db("tss11");
@@ -47,6 +50,43 @@ app.post("/api/adv/addservcie", backdoor, (req, res)=>{
     console.log("*****",JSON.parse(req.body.data));
 });
 
+
+
+app.post("/demo", (req, res)=>{
+    // console.log(req.files);
+    req.files.photo.mv(__dirname+"/public/assets/"+req.files.photo.name, (err)=>{
+
+        MongoClient.connect(url, (err, client)=>{
+            var db = client.db("tss11");
+            var obj = {name : req.files.photo.name};
+            db.collection("image").insert(obj, (err, result)=>{
+                
+                res.send({ path: "http://localhost:3000/assets/" + req.files.photo.name });
+            });
+        })
+
+
+        
+    });
+});
+
+app.get("/demo", (req, res)=>{
+    MongoClient.connect(url, (err, client) => {
+        var db = client.db("tss11");
+      
+        db.collection("image").find().toArray((err, result)=>{
+            // res.send(result);
+            var arr = [];
+
+
+            result.forEach(function(x){
+                var obj = { path : "http://localhost:3000/assets/"+x.name};
+                arr.push(obj);
+            });
+            res.send(arr);
+        })
+    })
+})
 
 
 

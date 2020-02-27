@@ -8,6 +8,7 @@ import { AdvGuardGuard } from '../guards/adv-guard.guard';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ServiceComponent } from './pages/service/service.component';
+import { UploadComponent } from './pages/upload/upload.component';
 
 
 
@@ -38,6 +39,11 @@ const routes: Routes = [
         path: "service",
         canActivate: [AdvGuardGuard],
         component: ServiceComponent
+      },
+      {
+        path : "upload",
+        canActivate : [AdvGuardGuard],
+        component : UploadComponent
       }
     ]
   }
