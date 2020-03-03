@@ -16,34 +16,41 @@ const routes: Routes = [
   {
     path : "",
     component : AdvComponent,
+    // pathMatch: "full", 
     children : [
       {
         path : "login",
-        component : LoginComponent
+        component : LoginComponent,
+        pathMatch: "full"
       },
       {
         path : "signup",
         component : SingupComponent
+        // pathMatch: "prefix"
       },
       {
         path : "dashboard",
         canActivate : [AdvGuardGuard],
         component : DashboardComponent
+        // pathMatch: "prefix"
       },
       {
         path : "profile",
         canActivate : [AdvGuardGuard],
         component : ProfileComponent
+        // pathMatch: "full"
       },
       {
         path: "service",
         canActivate: [AdvGuardGuard],
         component: ServiceComponent
+        // pathMatch: "full"
       },
       {
         path : "upload",
         canActivate : [AdvGuardGuard],
         component : UploadComponent
+        // pathMatch: "full"
       }
     ]
   }

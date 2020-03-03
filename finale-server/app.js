@@ -22,11 +22,30 @@ app.use(express.static(__dirname+"/public"));
 app.post("/api/adv/signup", (req, res)=>{
     MongoClient.connect(url, (err, client)=>{
         var db = client.db("tss11");
+        req.body.status=1;
         db.collection("adv").insert(req.body, (err, result)=>{
             res.send(result);
         })
     })
 });
+
+app.get("/api/admin/changestatus/:id/:status", (req, res)=>{
+    console.log(req.params);
+    MongoClient.connect(url, (err, client) => {
+        var db = client.db("tss11");
+        // var x = req.params.status ? 0 : 1;
+        if(req.params.status==1){
+            var x = 0;
+        }
+        else{
+            var x = 1;
+        }
+        db.collection("adv").update({ _id : mongodb.ObjectId(req.params.id)}, { $set : { status : x}}, (err, result)=>{
+            res.send(result);
+        })
+        
+    })
+})
 
 
 
@@ -148,6 +167,50 @@ app.post("/api/adv/login", (req, res) => {
                 res.status(401).send({
                     success : false,
                     status : 1
+                }); // status : 1 --- username and password incorrect
+            }
+        });
+    });
+});
+
+
+app.get("/api/admin/advlist", (req, res)=>{
+    MongoClient.connect(url, (err, client)=>{
+        var db = client.db("tss11");
+        db.collection("adv").find().toArray((err, result)=>{
+            res.send(result);
+        })
+    })
+})
+
+
+
+
+
+app.post("/api/admin/login", (req, res) => {
+    MongoClient.connect(url, (err, client) => {
+        var db = client.db("tss11");
+        db.collection("admin").find({ username: req.body.email }).toArray((err, result) => {
+            if (result.length > 0) {
+                if (result[0].password == req.body.password) {
+                    var obj = { id: result[0]._id };
+                    var token = jwt.sign(obj, "this is my secret key", { expiresIn: 3600 });
+                    res.status(200).send({
+                        success: true,
+                        token
+                    });
+                }
+                else {
+                    res.status(401).send({
+                        success: false,
+                        status: 2
+                    });
+                }
+            }
+            else {
+                res.status(401).send({
+                    success: false,
+                    status: 1
                 }); // status : 1 --- username and password incorrect
             }
         });

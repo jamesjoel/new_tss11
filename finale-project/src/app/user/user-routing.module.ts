@@ -12,11 +12,15 @@ const routes: Routes = [
       {
         path : "",
         component : HomeComponent
+       
       },
       {
         path : "about",
         component : AboutComponent
+        
       }
+      // { path: 'login', redirectTo: '', pathMatch: 'full' },
+      // { path: 'signup', redirectTo: '', pathMatch: 'full' },
     ]
   }
 ];
