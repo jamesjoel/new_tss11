@@ -9,6 +9,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ServiceComponent } from './pages/service/service.component';
 import { UploadComponent } from './pages/upload/upload.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 
@@ -51,6 +52,10 @@ const routes: Routes = [
         canActivate : [AdvGuardGuard],
         component : UploadComponent
         // pathMatch: "full"
+      },
+      {
+        path : "pages",
+        component : PaginationComponent
       }
     ]
   }

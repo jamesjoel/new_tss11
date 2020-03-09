@@ -4,7 +4,8 @@ export interface Adv {
     name?: string,
     email?: string,
     password?: string,
-    contact?: number
+    contact?: number,
+    hobby? : any
 
 
 }

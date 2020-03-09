@@ -34,14 +34,14 @@ export class DashComponent implements OnInit {
       //   }
       // }
 
-      let i = this.arr.indexOf(obj);
-      if(obj.status==1){
-        this.arr[i].status = 0;
-      }
-      else{
+      // let i = this.arr.indexOf(obj);
+      // if(obj.status==1){
+      //   this.arr[i].status = 0;
+      // }
+      // else{
         
-        this.arr[i].status = 1;
-      }
+      //   this.arr[i].status = 1;
+      // }
     })
   }
 

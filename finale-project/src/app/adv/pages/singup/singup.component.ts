@@ -13,8 +13,10 @@ export class SingupComponent implements OnInit {
     name : "",
     email : "",
     password : "",
-    contact : null
+    contact : null,
+    hobby : []
   };
+  hobby=[];
 
   constructor(
     private _advService : AdvService,
@@ -23,13 +25,24 @@ export class SingupComponent implements OnInit {
 
   ngOnInit() {
   }
+  getHobby(event, val){
+    if(event.target.checked){
+      this.hobby.push(val);
+    }
+    else{
+      let n= this.hobby.indexOf(val);
+      this.hobby.splice(n, 1);
+    }
+  }
   save() {
-    this._advService.signupAdv(this.adv).subscribe(result=>{
-      // console.log(result);
-      // this.boxShow=true;
-      localStorage.setItem("msg", "dsfgg dsfg");
-      this._router.navigate(["/login"]);
-    });
+    this.adv.hobby = this.hobby;
+    console.log(this.adv);
+    // this._advService.signupAdv(this.adv).subscribe(result=>{
+    //   // console.log(result);
+    //   // this.boxShow=true;
+    //   localStorage.setItem("msg", "dsfgg dsfg");
+    //   this._router.navigate(["/login"]);
+    // });
     
   }
 

@@ -50,6 +50,27 @@ app.get("/api/admin/changestatus/:id/:status", (req, res)=>{
 
 
 
+app.get("/api/getcity/:pageno", (req, res)=>{
+    var pageno = parseInt(req.params.pageno);
+    // console.log(pageno);
+    MongoClient.connect(url, (err, client)=>{
+        var db = client.db("tss11");
+        db.collection("cities").find().limit(pageno).toArray((err, result)=>{
+            res.send(result);
+        })
+    })
+})
+app.get("/api/totalcity", (req, res) => {
+    MongoClient.connect(url, (err, client) => {
+        var db = client.db("tss11");
+        db.collection("cities").count((err, result)=>{
+            res.send({total : result});
+        })
+    })
+})
+
+
+
 
 // after login view profile
 app.get("/api/adv/signup", backdoor, (req, res)=>{

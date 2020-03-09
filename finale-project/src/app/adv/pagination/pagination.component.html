@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            
+            <Hr />
+            <ul class="pagination">
+                <li *ngFor="let x of ' '.repeat(totalPages).split(''); let n = index" class="page-item">
+                    <a class="page-link" href="#">{{ n+1 }}</a>
+                </li>
+            
+            </ul>
+            <table class="table table-hover table-bordered table-dark">
+                <tr>
+                    <th>S.No.</th>
+                    <th>State Name</th>
+                    <th>City Name</th>
+                </tr>
+                <tr *ngFor="let x of arr; let n = index">
+                    <td>{{ n+1 }}</td>
+                    <td>{{ x.city_state }}</td>
+                    <td>{{ x.city_name }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
