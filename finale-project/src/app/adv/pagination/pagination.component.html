@@ -1,7 +1,9 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10 offset-md-1">
-            
+
+            <a routerLink="/pages" [queryParams]="{a : 'rohit'}" >Hello</a>
+
             <Hr />
             <ul class="pagination">
                 <li *ngFor="let x of ' '.repeat(totalPages).split(''); let n = index" class="page-item">
