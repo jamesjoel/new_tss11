@@ -50,12 +50,17 @@ app.get("/api/admin/changestatus/:id/:status", (req, res)=>{
 
 
 
-app.get("/api/getcity/:pageno", (req, res)=>{
+app.get("/api/getcity/:pageno/:recperpage", (req, res)=>{
+   
     var pageno = parseInt(req.params.pageno);
-    // console.log(pageno);
+    var recperpage = parseInt(req.params.recperpage);
+    var skip = (pageno-1)*recperpage;
+    
+
+
     MongoClient.connect(url, (err, client)=>{
         var db = client.db("tss11");
-        db.collection("cities").find().limit(pageno).toArray((err, result)=>{
+        db.collection("cities").find().skip(skip).limit(recperpage).toArray((err, result)=>{
             res.send(result);
         })
     })

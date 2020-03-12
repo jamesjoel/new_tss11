@@ -10,31 +10,44 @@ export class PaginationComponent implements OnInit {
   arr=[];
   total = 0;
   totalPages = 0;
-  recordPerPage = 0;
+  recordPerPage = 100;
+  pageNo = 1;
+  counter = 1;
   constructor(private _http : HttpClient, private _actRoute : ActivatedRoute) { }
 
   ngOnInit() {
     this._actRoute.queryParams.subscribe(params=>{
-      if(params.a){
-        this.recordPerPage = params.a;
-      }else{
-        
-        this.recordPerPage = 200;
+      
+      if(params.page){
+        this.pageNo = params.page;
       }
-    })
-
-
-
-    this._http.get<any>("http://localhost:3000/api/getcity/"+this.recordPerPage).subscribe(result=>{
+      this.counter = (this.pageNo-1)*this.recordPerPage;
+      // if(params.total){
+      //   this.recordPerPage = params.total;
+      // }
+      this._http.get<any>("http://localhost:3000/api/getcity/"+this.pageNo+"/"+this.recordPerPage).subscribe(result=>{
       this.arr = result;
     });
-    this._http.get<any>("http://localhost:3000/api/totalcity").subscribe(result=>{
-      this.total = result.total;
 
-      this.totalPages = Math.ceil(this.total/this.recordPerPage);
-      // console.log(this.totalPages);
+    // console.log(this.recordPerPage);
 
-    })
+      this._http.get<any>("http://localhost:3000/api/totalcity").subscribe(result => {
+        this.total = result.total;
+
+        this.totalPages = Math.ceil(this.total / this.recordPerPage);
+        // console.log(this.totalPages);
+
+      });
+
+
+    });
+
+    
+
+
+
+    
+    
 
 
 

@@ -2,14 +2,15 @@
     <div class="row">
         <div class="col-md-10 offset-md-1">
 
-            <a routerLink="/pages" [queryParams]="{a : 'rohit'}" >Hello</a>
+            
 
             <Hr />
             <ul class="pagination">
+                <li class="page-item"><a routerLink="/pages" [queryParams]="{ 'page' : pageNo-1}" class="page-link">Pre</a></li>
                 <li *ngFor="let x of ' '.repeat(totalPages).split(''); let n = index" class="page-item">
-                    <a class="page-link" href="#">{{ n+1 }}</a>
+                    <a class="page-link" routerLink="/pages" [queryParams]="{ page : n+1}" href="#">{{ n+1 }}</a>
                 </li>
-            
+                <li class="page-item"><a routerLink="/pages" class="page-link" [queryParams]="{ 'page' : pageNo+1 }">Next</a></li>            
             </ul>
             <table class="table table-hover table-bordered table-dark">
                 <tr>
@@ -18,7 +19,7 @@
                     <th>City Name</th>
                 </tr>
                 <tr *ngFor="let x of arr; let n = index">
-                    <td>{{ n+1 }}</td>
+                    <td>{{ (counter+n)+1 }}</td>
                     <td>{{ x.city_state }}</td>
                     <td>{{ x.city_name }}</td>
                 </tr>
