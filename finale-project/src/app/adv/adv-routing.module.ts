@@ -10,6 +10,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { ServiceComponent } from './pages/service/service.component';
 import { UploadComponent } from './pages/upload/upload.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { ListComponent } from './pages/list/list.component';
 
 
 
@@ -57,6 +58,10 @@ const routes: Routes = [
         path : "pages",
         component : PaginationComponent
         
+      },
+      {
+        path : "list",
+        component : ListComponent
       }
     ]
   }
