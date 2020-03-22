@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="row my-4">
+    <div class="col-md-6 offset-md-3">
+      <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="userInfo.name" value="{{userInfo.name}}">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" disabled="disabled" value="{{userInfo.email}}">
+      </div>
+      <div class="form-group">
+        <label> Select Image</label>
+        <input type="file" #file class="form-control" >
+      </div>
+      <button class="btn btn-success" (click)="updateData(file)">Update</button>
+    </div>
+  </div>
+</div>

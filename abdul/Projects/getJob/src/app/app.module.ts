@@ -3,30 +3,19 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BlogComponent } from './pages/blog/blog.component';
-import { BlogSingleComponent } from './pages/blog-single/blog-single.component';
-import { BrowseJobsComponent } from './pages/browse-jobs/browse-jobs.component';
-import { CandidatesComponent } from './pages/candidates/candidates.component';
-import { ContactComponent } from './pages/contact/contact.component';
-import { HomeComponent } from './pages/home/home.component';
-import { JobPostComponent } from './pages/job-post/job-post.component';
-import { NewPostComponent } from './pages/new-post/new-post.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    BlogComponent,
-    BlogSingleComponent,
-    BrowseJobsComponent,
-    CandidatesComponent,
-    ContactComponent,
-    HomeComponent,
-    JobPostComponent,
-    NewPostComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

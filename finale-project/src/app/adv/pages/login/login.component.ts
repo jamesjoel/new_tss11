@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit {
       }
       if(err.error.status==2) {
         this.message="This Password is Incorrect";
-
       }
     })
   }

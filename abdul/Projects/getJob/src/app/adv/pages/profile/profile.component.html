@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <div class="row my-4">
+    <div class="col-md-6 offset-md-3">
+      <table class="table table-dark table-striped table-bordered">
+        <tr>
+          <th>Name</th>
+          <td>{{userData.name}}</td>
+        </tr>
+        <tr>
+          <th>Image</th>
+          <td><img src="{{image.path}}" alt="{{userData.image}}" height="100" width="100"> </td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td>{{userData.email}}</td>
+        </tr>
+        <tr>
+          <th>Address</th>
+          <td>{{userData.address}}</td>
+        </tr>
+        <tr>
+          <th>Contact</th>
+          <td>{{userData.contact}}</td>
+        </tr>
+      </table>
+      <button class="btn btn-info" (click)="editProfile()">Edit Profile</button>
+    </div>
+  </div>
+</div>

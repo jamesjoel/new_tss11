@@ -29,17 +29,22 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.css",
-              "src/assets/css/owl.theme.default.min.css",
-              "src/assets/css/magnific-popup.css",
-              "src/assets/css/aos.css",
-              "src/assets/css/animate.css",
-              "src/assets/css/jquery.timepicker.css",
-              "src/assets/css/style.css"
+              "node_modules/vendor/bootstrap/css/bootstrap.min.css",
+              "node_modules/vendor/animate.css/animate.min.css",
+              "node_modules/vendor/icofont/icofont.min.css",
+              "node_modules/vendor/venobox/venobox.css",
+              "node_modules/bootstrap/dist/css/my/style.css" 
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.js"
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.js",
+              "node_modules/vendor/jquery/jquery.min.js",
+              "node_modules/vendor/bootstrap/js/bootstrap.bundle.min.js",
+              "node_modules/vendor/jquery.easing/jquery.easing.min.js",
+              "node_modules/vendor/php-email-form/validate.js",
+              "node_modules/vendor/isotope-layout/isotope.pkgd.min.js",
+              "node_modules/vendor/venobox/venobox.min.js",
+              "node_modules/jquery/dist/main.js"
             ]
           },
           "configurations": {

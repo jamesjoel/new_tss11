@@ -1,0 +1,66 @@
+<div class="container-fluid">
+  <div class="row my-3">
+    <div class="col-md-8 offset-md-2">
+      <form [formGroup] ="formValidate">
+        <div class="form-group">
+        <input type="text" name="name" class="form-control" formControlName="name" [ngClass]="{ 'is-invalid' : submitted && check.name.errors }"  placeholder="Your Name" />
+      </div>
+      <div class="invalid-feedback text-danger" *ngIf="submitted && check.name.errors">
+        <div *ngIf="check.name.errors.required">Insert your Name</div>
+        <div *ngIf="check.name.errors.minlength">Insert atleast 3 character</div>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="email" formControlName="email" [ngClass]="{ 'is-invalid' : submitted && check.email.errors }"  placeholder="Your Email"/>
+        <small class="text-danger">{{message}}</small>
+      </div>
+      <div class="invalid-feedback text-danger" *ngIf="submitted && check.email.errors">
+        <div *ngIf="check.email.errors.required">Insert your Email</div>
+        <div *ngIf="check.email.errors.minlength">Insert correct email</div>
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" name="password" formControlName="password" [ngClass]="{ 'is-invalid' : submitted && check.password.errors }"  placeholder="Your Password"/>
+      </div>
+      <div class="invalid-feedback text-danger" *ngIf="submitted && check.password.errors">
+        <div *ngIf="check.password.errors.required">Insert your Password</div>
+        <div *ngIf="check.password.errors.minlength">Insert atleast 8 character</div>
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" name="cnf_pass" formControlName="confirm_password" [ngClass]="{ 'is-invalid' : submitted && check.confirm_password.errors }"  placeholder="Your Confirm Password"/>
+      </div>
+      <div class="invalid-feedback text-danger" *ngIf="submitted && check.confirm_password.errors">
+        <div *ngIf="check.confirm_password.errors.required">Insert Confirm Password</div>
+        <!-- <div *ngIf="check.name.errors.minlength">Insert atleast 3 character</div> -->
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" name="address" rows="3" formControlName="address" [ngClass]="{ 'is-invalid' : submitted && check.address.errors }" placeholder="address"></textarea>
+      </div>
+      <div class="invalid-feedback text-danger" *ngIf="submitted && check.address.errors">
+        <div *ngIf="check.address.errors.required">Insert your Address</div>
+        <div *ngIf="check.address.errors.minlength">Insert atleast 3 character</div>
+        <div *ngIf="check.address.errors.maxlength">Insert laess then 60 character</div>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="contact"  formControlName="contact" [ngClass]="{ 'is-invalid' : submitted && check.contact.errors }"  placeholder="Contact"/>
+      </div>
+      <div class="invalid-feedback text-danger" *ngIf="submitted && check.contact.errors">
+        <div *ngIf="check.contact.errors.required">Insert your Contact</div>
+        <div *ngIf="check.contact.errors.minlength">Insert atleast 10 digit</div>
+      </div>
+      <input type="submit" value="Signup" class="btn btn-success" (click)="register()">
+      
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- 
+
+[(ngModel)]="user.name"
+[(ngModel)]="user.email"
+[(ngModel)]="user.password"
+[(ngModel)]="user.cnf_password"
+[(ngModel)]="user.address"
+[(ngModel)]="user.contact"
+ -->

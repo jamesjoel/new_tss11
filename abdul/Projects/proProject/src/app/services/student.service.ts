@@ -7,16 +7,18 @@ import { HttpClient } from '@angular/common/http';
 })
 export class StudentService {
 
+  url = "http://localhost:3000/api/"
+
   allStudentList:Student[];
 
   constructor(private http : HttpClient) { }
 
   getAllStudents(){
-    return this.http.get<any>("http://localhost:3000/api/getuser");
+    return this.http.get<any>(this.url+"getuser");
   }
 
   goLogin(){
-    return this.http.get<any>("http://localhost:3000/api/login");
+    return this.http.get<any>(this.url+"login");
   }
 
   allStudents(){

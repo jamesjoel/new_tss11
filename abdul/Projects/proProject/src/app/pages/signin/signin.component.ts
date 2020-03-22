@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentService } from '../../services/student.service';
+import { UserService } from '../../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -14,14 +15,38 @@ export class SigninComponent implements OnInit {
   }
 
   errMsg : string = "Username or Password is incorrect";
+  subscriptions: any;
+  usersService: any;
 
-  constructor(private studServ : StudentService) { }
+  constructor(private userServ : UserService, private router : Router) { 
+    // this.subscriptions.push(
+    //   this.usersService.authenticationStatus.subscribe(data => {
+    //     this.checkLoginStatus(data);
+    //   })
+    // );
+  }
 
   ngOnInit() {
   }
 
-  signin(){
-    console.log(this.getObj);
+  async signin(){
+    await this.userServ.login(this.getObj).then( loginRes => {
+      console.log('loginRes%%%', loginRes);
+      if(loginRes.code !== undefined) {
+        console.log(loginRes.message)
+      } else {
+        this.router.navigate(["/profile"]);
+      }
+    })
   }
+
+  public checkLoginStatus(data: any): void {
+    console.log(data,"ooooooooo")
+    // if (data.status === 200) {
+    //   this.router.navigate(['/profile/']);
+    // } 
+  }
+
+  
 
 }

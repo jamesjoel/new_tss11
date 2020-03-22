@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div class="row bg-light">
+    <div class="col-md-12">
+      <ul class="nav justify-content-end">
+        <li class="list-item">
+          <a routerLink="" class="nav-link">Home</a>
+        </li>
+
+        <ng-template [ngIf]="logServ.isLoggedIn()" [ngIfElse]="beforeLogin">
+          <li class="list-item">
+            <a routerLink="/adv/profile" class="nav-link">Profile</a>
+          </li>
+          <li class="list-item">
+            <a routerLink="/adv/upload" class="nav-link">upload</a>
+          </li>
+          <li class="list-item">
+            <a routerLink="/adv/dashboard" class="nav-link">Dashboard</a>
+          </li>
+          <li class="list-item">
+            <a (click)="logServ.logout()" style="cursor: pointer;" href="#" class="nav-link">Logout</a>
+          </li>
+        </ng-template>
+
+        <ng-template #beforeLogin>
+          <li class="list-item">
+            <a routerLink="/adv/signup" class="nav-link">Signup</a>
+          </li>
+          <li class="list-item">
+            <a routerLink="/adv/login" class="nav-link">Signin</a>
+          </li>
+        </ng-template>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
+<h1 class="text-center p-4 m-0 bg-light">FOOTER</h1>
